@@ -3,8 +3,10 @@ package id.metacorporation.repository
 import id.metacorporation.R
 import id.metacorporation.enum.SosmedType
 import id.metacorporation.enum.TopProgramType
+import id.metacorporation.models.JobdeskModel
 import id.metacorporation.models.PresenterModel
 import id.metacorporation.models.ProgramModel
+import kotlin.collections.ArrayList
 
 class DataRepository {
 
@@ -21,7 +23,32 @@ class DataRepository {
                     "Program TV 1",
                     resource = R.drawable.ic_launcher_background,
                     urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI"
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "lorem ipsun pale pal paleple plepaleplrepalraep sadfasd dsaf asdf sdf sdf dsfas dfali asdf ",
+                    kruJobdesk = arrayListOf(
+                        JobdeskModel(
+                            "Produser",
+                            arrayListOf(
+                                "Bambang Murdaningrum"
+                            )
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            arrayListOf(
+                                "Tatang Sutatang"
+                            )
+                        ),
+                        JobdeskModel(
+                            "Gatau ini apa",
+                            arrayListOf(
+                                "Spiderman",
+                                "Iron Man",
+                                "Kapten amerika"
+                            )
+                        ),
+
+                    )
+
                 ),
                 ProgramModel(
                     "Program TV 2",
