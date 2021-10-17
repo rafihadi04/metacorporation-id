@@ -27,4 +27,16 @@
     <string name="whatsapp">WhatsApp</string>
     <string name="youtube">Youtube</string>
     <string name="facebook">Facebook</string>
+    <string name="pembawa_acara">PEMBAWA ACARA</string>
+    <string name="daftar_kru">DAFTAR KRU</string>
+    <string name="meta_corporation">META CORPORATION</string>
+    <string name="media_partner">MEDIA PARTNER</string>
+    <string name="sponsor">SPONSOR</string>
+    <string name="credit_title">CREDIT TITLE</string>
+    <string name="streaming_tv">STREAMING TV</string>
+    <string name="streaming_radio">STREAMING RADIO</string>
+    <string name="jadwal_nsiaran">JADWAL\nSIARAN</string>
+    <string name="program_tv">Program TV</string>
+    <string name="program_radio">Program Radio</string>
+    <string name="live_chat">LIVE CHAT</string>
 </resources>

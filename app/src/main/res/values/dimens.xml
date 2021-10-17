@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_title_size">@dimen/_17sdp</dimen>
+    <dimen name="text_title_size">@dimen/_15sdp</dimen>
     <dimen name="program_image_sizeXY">@dimen/_85sdp</dimen>
     <dimen name="tv_margin_start">@dimen/_10sdp</dimen>
     <dimen name="logo_height_size">@dimen/_50sdp</dimen>
@@ -10,4 +10,7 @@
     <dimen name="text_size_livechat">@dimen/_13sdp</dimen>
     <dimen name="live_chat_height">@dimen/_45sdp</dimen>
     <dimen name="iv_deskripsi_presenter">@dimen/_80sdp</dimen>
+    <dimen name="tv_body_progam">@dimen/_10sdp</dimen>
+    <dimen name="logo_corp_size">@dimen/_25sdp</dimen>
+    <dimen name="bottom_nav_bar_radius">@dimen/_15sdp</dimen>
 </resources>
