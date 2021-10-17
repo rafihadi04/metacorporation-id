@@ -6,5 +6,8 @@ class ProgramModel (
     var urlImage :String = "",
     var urlTeaser :String = "",
     var deskripsiProgram :String = "",
-    var urlBannerImage :String = ""
-)
+    var urlBannerImage :String = "",
+    var jam :String = "18:00",
+    var kruJobdesk :ArrayList<JobdeskModel> = arrayListOf()
+) {
+}
