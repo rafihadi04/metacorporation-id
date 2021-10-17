@@ -9,15 +9,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
 import id.metacorporation.adapter.BannerAdapter
-import id.metacorporation.adapter.ProgramAdapter
 import id.metacorporation.R
+import id.metacorporation.adapter.JadwalAdapter
 import id.metacorporation.enum.TopProgramType
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
+import id.metacorporation.usecase.MainActivityUseCase
 
 
 class HomeFragment(val dataRepository: DataRepository) : Fragment() {
@@ -25,6 +27,8 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
     lateinit var rvTopProgramTv :RecyclerView
     lateinit var rvTopProgramRadio :RecyclerView
     lateinit var slider :SliderView
+    lateinit var btStreamTV :MaterialButton
+    lateinit var btStreamRadio :MaterialButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +37,8 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
 
         viewFragment = inflater.inflate(R.layout.fragment_home, container, false)
 
-        rvTopProgramTv = viewFragment.findViewById(R.id.rv_top_programtv)
-        rvTopProgramRadio = viewFragment.findViewById(R.id.rv_top_programradio)
+        rvTopProgramTv = viewFragment.findViewById(R.id.rv_jadwal_programtv)
+        rvTopProgramRadio = viewFragment.findViewById(R.id.rv_jadwal_programradio)
         slider = viewFragment.findViewById(R.id.banner_program)
 
         @SuppressLint("SourceLockedOrientationActivity")
@@ -48,16 +52,28 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
         val programRadio = dataRepository.getTopProgram(TopProgramType.RADIO)
         val programTv = dataRepository.getTopProgram(TopProgramType.TV)
 
-        showTopProgram(programRadio,programTv)
+        btStreamTV = viewFragment.findViewById(R.id.btStreamTV)
+        btStreamRadio = viewFragment.findViewById(R.id.btStreamRadio)
+
+        setButtonListener()
+        showJadwalProgram(programRadio,programTv)
         showBanner(context, dataRepository.getBanner())
 
         /*Thread({
             Log.d(this.javaClass.simpleName,Thread.currentThread().name)
         },"ShowBanner").start()*/
 
-
-
         return viewFragment
+    }
+
+    private fun setButtonListener() {
+        btStreamTV.setOnClickListener {
+            (requireActivity() as MainActivityUseCase).onSwitch(R.id.tv_Fragment)
+        }
+
+        btStreamRadio.setOnClickListener {
+            (requireActivity() as MainActivityUseCase).onSwitch(R.id.radio_Fragment)
+        }
     }
 
     override fun onResume() {
@@ -80,13 +96,13 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
         slider.startAutoCycle()
     }
 
-    fun showTopProgram(dataRadio :ArrayList<ProgramModel>, dataTV :ArrayList<ProgramModel>){
-        rvTopProgramRadio.adapter = ProgramAdapter(
+    fun showJadwalProgram(dataRadio :ArrayList<ProgramModel>, dataTV :ArrayList<ProgramModel>){
+        rvTopProgramRadio.adapter = JadwalAdapter(
             context,
             dataRadio
         )
 
-        rvTopProgramTv.adapter = ProgramAdapter(
+        rvTopProgramTv.adapter = JadwalAdapter(
             context,
             dataTV
         )

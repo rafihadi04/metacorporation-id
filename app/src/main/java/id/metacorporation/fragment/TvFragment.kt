@@ -12,9 +12,7 @@ import android.os.Looper
 import android.provider.Settings
 import android.util.Log
 import android.view.*
-import android.view.animation.Animation
-import android.view.animation.Transformation
-import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -24,9 +22,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import id.metacorporation.R
-import id.metacorporation.adapter.PresenterAdapter
 import id.metacorporation.adapter.ProgramAdapter
-import id.metacorporation.models.PresenterModel
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
 import kotlin.properties.Delegates
@@ -35,13 +31,13 @@ import kotlin.properties.Delegates
 @Suppress("LocalVariableName")
 class TvFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var rvProgramTv :RecyclerView
-    private lateinit var rvPresenterTv :RecyclerView
+    //private lateinit var rvPresenterTv :RecyclerView
     private lateinit var viewFragment: View
     private lateinit var youTubePlayerView :YouTubePlayerView
     ///*EXPERIMENTAL*/private lateinit var youtubeView :YouTubeView
     private lateinit var navbar: ChipNavigationBar
-    private lateinit var livechat:LinearLayout
-    private lateinit var livechatTitle :LinearLayout
+    private lateinit var livechat:View
+    private lateinit var livechatTitle :TextView
     private var youtubePlayer :YouTubePlayer? = null
     private var mOriginalHeight by Delegates.notNull<Int>()
     private var isFullscreen :Boolean = false
@@ -60,21 +56,21 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
 
         Log.d(this.javaClass.simpleName,"onCreateView()")
 
-        viewFragment = inflater.inflate(R.layout.fragment_tv, container, false)
+        viewFragment = inflater.inflate(R.layout.fragment_tv_radio, container, false)
 
         youTubePlayerView = viewFragment.findViewById(R.id.youtubeTv)
 
-        rvPresenterTv = viewFragment.findViewById(R.id.rv_presenter_tv)
+        /*rvPresenterTv = viewFragment.findViewById(R.id.rv_presenter_tv)*/
         rvProgramTv = viewFragment.findViewById(R.id.rv_our_programtv)
 
-        livechat = viewFragment.findViewById(R.id.layoutLivechat)
-        livechatTitle = viewFragment.findViewById(R.id.livechatTitle)
+        livechat = viewFragment.findViewById(R.id.liveChatLayout)
+        livechatTitle = viewFragment.findViewById(R.id.liveChatButton)
 
         navbar = requireActivity().findViewById(R.id.bottomNav)
 
-        livechat.post{
+        /*livechat.post{
             mOriginalHeight=livechat.height
-        }
+        }*/
 
         navbar.visibility = savedInstanceState?.getInt("NavBar") ?: View.VISIBLE
         isFullscreen = savedInstanceState?.getBoolean("isFullscreen") ?: false
@@ -92,7 +88,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
             youtubeView.settings.javaScriptEnabled = true
             youtubeView.loadUrl("https://youtube.com/embed/M7lc1UVf-VE")
         }*/
-        showProgram(dataRepository.getProgramTv(), dataRepository.getPresenter())
+        showProgram(dataRepository.getProgramTv()/*, dataRepository.getPresenter()*/)
         /*Thread({
             Log.d(this.javaClass.simpleName,Thread.currentThread().name)
 
@@ -101,10 +97,20 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
         return viewFragment
     }
 
+    private fun setLiveChatListener() {
+        livechatTitle.setOnClickListener {
+            if(livechat.visibility==View.GONE){
+                livechat.visibility=View.VISIBLE
+            }else{
+                livechat.visibility=View.GONE
+            }
+        }
+    }
+
     /**
      * Mengatur Layout untuk Live Chat
      * */
-    private fun setLiveChatListener() {
+    /*private fun setLiveChatListener() {
 
         val _hideAnimation = object:  Animation(){
             override fun applyTransformation(interpolatedTime: Float, t: Transformation?) {
@@ -137,7 +143,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
             isShrink = !isShrink
 
         }
-    }
+    }*/
 
     /**
      * Fungsi ini dipanggil setiap kali fragment tampil kembali
@@ -163,15 +169,15 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
     /**
      * Fungsi untuk menampilkan Program TV
      * */
-    fun showProgram(dataProgram: ArrayList<ProgramModel>, dataPresenter: ArrayList<PresenterModel>) {
+    fun showProgram(dataProgram: ArrayList<ProgramModel>,/* dataPresenter: ArrayList<PresenterModel>*/) {
         rvProgramTv.adapter = ProgramAdapter(
             context,
             programList = dataProgram
         )
-        rvPresenterTv.adapter = PresenterAdapter(
+        /*rvPresenterTv.adapter = PresenterAdapter(
             context,
             presenterList = dataPresenter,
-        )
+        )*/
 
     }
 

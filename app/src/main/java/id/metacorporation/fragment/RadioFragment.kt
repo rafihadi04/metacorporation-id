@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.RecyclerView
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
@@ -21,18 +23,19 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import id.metacorporation.R
-import id.metacorporation.adapter.PresenterAdapter
 import id.metacorporation.adapter.ProgramAdapter
-import id.metacorporation.models.PresenterModel
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
 
 class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var rvProgramRadio : RecyclerView
-    private lateinit var rvPresenterRadio : RecyclerView
+    //private lateinit var rvPresenterRadio : RecyclerView
     private lateinit var viewFragment: View
     private lateinit var youTubePlayerView : YouTubePlayerView
     private lateinit var navbar: ChipNavigationBar
+    private lateinit var livechat:View
+    private lateinit var livechatTitle : TextView
+    private lateinit var logo :ImageView
     private var youtubePlayer :YouTubePlayer? = null
     private var callback: OnBackPressedCallback? = null
 
@@ -41,24 +44,45 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        viewFragment = inflater.inflate(R.layout.fragment_radio, container, false)
+        viewFragment = inflater.inflate(R.layout.fragment_tv_radio, container, false)
 
-        youTubePlayerView = viewFragment.findViewById(R.id.youtubeRadio)
+        youTubePlayerView = viewFragment.findViewById(R.id.youtubeTv)
 
-        rvProgramRadio = viewFragment.findViewById(R.id.rv_our_programradio)
-        rvPresenterRadio = viewFragment.findViewById(R.id.rv_presenter_radio)
+        rvProgramRadio = viewFragment.findViewById(R.id.rv_our_programtv)
+        //rvPresenterRadio = viewFragment.findViewById(R.id.rv_presenter_radio)
+
+        livechat = viewFragment.findViewById(R.id.liveChatLayout)
+        livechatTitle = viewFragment.findViewById(R.id.liveChatButton)
 
         navbar = requireActivity().findViewById(R.id.bottomNav)
         navbar.visibility = savedInstanceState?.getInt("NavBar") ?: View.VISIBLE
 
+        logo = viewFragment.findViewById(R.id.logoTV)
+
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
         youTubePlayerView.post{
+            /*Glide.with(viewFragment)
+                .load(R.drawable.meta_radio_colored_white)
+                .encodeQuality(100)
+                .into(logo)*/
+            logo.setImageResource(R.drawable.meta_radio_colored_white)
+            setLiveChatListener()
             setyoutubeLink(getString(R.string.youtube_live_radio))
         }
-        showProgram(dataRepository.getProgramRadio(), dataRepository.getAnnouncer())
+        showProgram(dataRepository.getProgramRadio()/*, dataRepository.getAnnouncer()*/)
 
         return viewFragment
+    }
+
+    private fun setLiveChatListener() {
+        livechatTitle.setOnClickListener {
+            if(livechat.visibility==View.GONE){
+                livechat.visibility=View.VISIBLE
+            }else{
+                livechat.visibility=View.GONE
+            }
+        }
     }
 
     override fun onResume() {
@@ -78,15 +102,15 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
         youtubePlayer?.pause()
     }
 
-    private fun showProgram(dataProgram :ArrayList<ProgramModel>, dataAnnouncer:ArrayList<PresenterModel>) {
+    private fun showProgram(dataProgram :ArrayList<ProgramModel>/*, dataAnnouncer:ArrayList<PresenterModel>*/) {
         rvProgramRadio.adapter = ProgramAdapter(
             context,
             programList = dataProgram
         )
-        rvPresenterRadio.adapter = PresenterAdapter(
+        /*rvPresenterRadio.adapter = PresenterAdapter(
             context,
             presenterList = dataAnnouncer,
-        )
+        )*/
     }
 
     /**

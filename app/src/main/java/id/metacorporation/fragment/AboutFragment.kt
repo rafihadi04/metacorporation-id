@@ -38,7 +38,7 @@ class AboutFragment : Fragment() {
         val intent = Intent(requireContext(),MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(requireContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT)
 
-        view.findViewById<Button>(R.id.bt_sponsor).setOnClickListener{
+        /*view.findViewById<Button>(R.id.bt_sponsor).setOnClickListener{
             //showNotification("Sponsor", "sponsor bla bla bla desc")
             scheduleNotification("Program TV 1","Program telah dimulai, silahkan ketuk untuk melihat!",R.drawable.ic_tv,pendingIntent)
         }
@@ -51,7 +51,7 @@ class AboutFragment : Fragment() {
                 R.drawable.ic_radio,
                 pendingIntent
             )
-        }
+        }*/
     }
 
     override fun onResume() {
@@ -73,7 +73,7 @@ class AboutFragment : Fragment() {
         //NotificationManagerCompat.from(this).notify(NotificationID.PROGRAM.ordinal,notificationBuilder.build())
     }*/
 
-    fun scheduleNotification(
+    /*fun scheduleNotification(
         title: String,
         contentText: String,
         icon: Int = R.drawable.ic_tv,
@@ -89,7 +89,7 @@ class AboutFragment : Fragment() {
         val futureInMillis = SystemClock.elapsedRealtime() + 100000
         val alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent)
-    }
+    }*/
 
 
 }
