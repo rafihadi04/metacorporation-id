@@ -9,5 +9,5 @@ metacorporation-id merupakan aplikasi streaming yang dibuat untuk Meta Corporati
 ## Kerabat Kerja App Develompent
 Dalam pengerjaan aplikasi ini, terdapat kerabat kerja app development terdiri dari:
 * [Rafi Heldiansyah Adi](https://github.com/rafihadi04) 
-* [Bambang Murdaningrum](https://github.com/)
+* [Bambang Murdaningrum](https://github.com/Hyman99)
 * [Herwinda Nuha Nuzullata](https://github.com/)
