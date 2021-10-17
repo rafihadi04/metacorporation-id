@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/beranda"
+        android:id="@+id/home_Fragment"
+        android:icon="@drawable/ic_home"
+        />
+    <item
+        android:title="@string/televisi"
+        android:id="@+id/tv_Fragment"
+        android:icon="@drawable/ic_tv"
+        />
+    <item
+        android:title="@string/berita"
+        android:id="@+id/news_Fragment"
+        android:icon="@drawable/ic_news"
+        />
+    <item
+        android:title="@string/radio"
+        android:id="@+id/radio_Fragment"
+        android:icon="@drawable/ic_radio"
+        />
+    <item
+        android:title="@string/tentang"
+        android:id="@+id/about_Fragment"
+        android:icon="@drawable/ic_info"
+        />
+</menu>

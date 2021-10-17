@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Meta Corporation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="televisi">TV</string>
+    <string name="berita">Berita</string>
+    <string name="beranda">Home</string>
+    <string name="tentang">Tentang</string>
+    <string name="radio">Radio</string>
+    <string name="top_programtv">Top Program TV</string>
+    <string name="top_programradio">Top Program Radio</string>
+    <string name="announcer">Announcer</string>
+    <string name="our_program">Our Program</string>
+    <string name="presenter">Presenter</string>
+    <string name="about_us">About Us</string>
+    <string name="deskripsi_about_us">Lorem ipsum dolor sit amet ini deskripsi program tolong diisi
+        tengkyu ges ahahah mantab jiwa. aing pusing ini mau di iisi apa euy
+        cuhaks aku gatau ini mau di isi apaan. Yoroshikuonengaisimasu!
+    </string>
+    <string name="contact_us">Contact Us</string>
+    <string name="contact_us_description">ini di isi contact kalian ges</string>
+    <string name="toast_double_back">Tekan sekali lagi untuk mengeluarkan</string>
+    <string name="youtube_live_tv">awWVru0nwMY</string>
+    <string name="youtube_live_radio">2cP4sE5l-B8</string>
+    <string name="twitter">Twitter</string>
+    <string name="instagram">Instagram</string>
+    <string name="tiktok">Tiktok</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="youtube">Youtube</string>
+    <string name="facebook">Facebook</string>
+</resources>

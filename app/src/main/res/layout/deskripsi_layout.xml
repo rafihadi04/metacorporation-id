@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/tv_margin_start">
+
+        <ImageView
+            android:id="@+id/iv_presenter_profile"
+            android:layout_width="@dimen/iv_deskripsi_presenter"
+            android:layout_height="@dimen/iv_deskripsi_presenter"
+            android:src="@drawable/ic_launcher_background">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/tv_margin_start">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/ic_sosmed_deskripsi"
+                android:layout_width="@dimen/iv_icon_sosmed"
+                android:layout_height="@dimen/iv_icon_sosmed"
+                android:src="@drawable/ic_launcher_background"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/tv_margin_start">
+
+                <TextView
+                    android:id="@+id/tv_sosmed_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Instagram"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_title_size"/>
+                <TextView
+                    android:id="@+id/tv_sosmed_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\@Rafihadi04"
+                    android:textAlignment="center"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/tv_margin_start">
+
+        <TextView
+            android:id="@+id/tv_sosmed_deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/deskripsi_about_us"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
