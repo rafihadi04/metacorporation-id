@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -17,6 +18,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.You
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import id.metacorporation.R
 import id.metacorporation.models.ProgramModel
+import java.lang.RuntimeException
 
 class ProgramAdapter(
     val context: Context?,
@@ -59,11 +61,19 @@ class ProgramAdapter(
 
         bottomSheetDialog.setContentView(R.layout.deskripsi_program_layout)
         bottomSheetDialog.findViewById<TextView>(R.id.tv_program_title)!!.text =
-            programList[position].namaProgram
+            programList[position].namaProgram.uppercase()
         bottomSheetDialog.findViewById<TextView>(R.id.tv_program_deskripsi)!!.text =
             programList[position].deskripsiProgram
+
+        //val lyt = bottomSheetDialog.findViewById<LinearLayout>(R.id.layoutDetilProgram)
+        //bottomSheetDialog.behavior.peekHeight = 100
+
         val ytView = bottomSheetDialog.findViewById<YouTubePlayerView>(R.id.youtubeView)
         val imageView = bottomSheetDialog.findViewById<ImageView>(R.id.bannerProgram)
+        val rvKru = bottomSheetDialog.findViewById<RecyclerView>(R.id.rvJobdesk)
+        rvKru?.adapter = JobdeskAdapter(
+            programList[position].kruJobdesk
+        )
         when {
             programList[position].urlTeaser.isNotEmpty() -> {
                 imageView!!.visibility=View.GONE

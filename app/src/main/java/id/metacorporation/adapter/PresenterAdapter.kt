@@ -31,10 +31,9 @@ class PresenterAdapter(
 
     @SuppressLint("InflateParams")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PresenterAdapterVH {
-        var inflater :View? = null
-        inflater = LayoutInflater.from(parent.context).inflate(R.layout.presenter_layout,null)
-
-        return PresenterAdapterVH(inflater!!)
+        return PresenterAdapterVH(
+            LayoutInflater.from(parent.context).inflate(R.layout.presenter_layout,null)
+        )
     }
 
     override fun onBindViewHolder(holder: PresenterAdapterVH, position: Int) {

@@ -61,7 +61,7 @@ class BannerAdapter(
 
         bottomSheetDialog.setContentView(R.layout.deskripsi_program_layout)
         bottomSheetDialog.findViewById<TextView>(R.id.tv_program_title)!!.text =
-            listProgram[position].namaProgram
+            listProgram[position].namaProgram.uppercase()
         bottomSheetDialog.findViewById<TextView>(R.id.tv_program_deskripsi)!!.text =
             listProgram[position].deskripsiProgram
         val ytView = bottomSheetDialog.findViewById<YouTubePlayerView>(R.id.youtubeView)
