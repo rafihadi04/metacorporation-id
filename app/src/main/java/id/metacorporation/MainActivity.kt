@@ -14,8 +14,9 @@ import androidx.lifecycle.Lifecycle
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import id.metacorporation.fragment.*
 import id.metacorporation.repository.DataRepository
+import id.metacorporation.usecase.MainActivityUseCase
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),MainActivityUseCase {
 
     lateinit var bottomNav :ChipNavigationBar
     /*lateinit var viewPager : ViewPager2*/
@@ -176,6 +177,20 @@ class MainActivity : AppCompatActivity() {
             val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(mChannel)
         }
+    }
+
+    override fun onSwitch(idFragment :Int) {
+        bottomNav.setItemSelected(idFragment)
+    }
+
+    override fun blackNavBar() {
+        //bottomNav.background.setTint(getColor(R.color.pallet_gray))
+        //bottomNav.saveAttributeDataForStyleable()
+        //bottomNav.setMenuResource()
+    }
+
+    override fun whiteNavBar() {
+        //bottomNav.background.setTint(getColor(R.color.pallet_white))
     }
 
 
