@@ -6,124 +6,291 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.AboutFragment"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="15dp">
 
-    <ImageView
-        android:id="@+id/logomedia"
+    >
+
+    <Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_margin="15dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-            <ImageView
-                android:layout_width="@dimen/iv_on_title"
-                android:layout_height="@dimen/iv_on_title"
-                android:src="@drawable/ic_launcher_background"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/about_us"
-                android:textStyle="bold"
-                android:textSize="@dimen/text_title_size"
-                />
-        </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/deskripsi_about_us"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/logo_corp_size"
+            android:src="@drawable/meta_corporation_colored_black"
             />
-        <LinearLayout
+
+    </Toolbar>
+
+
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="@dimen/iv_icon_sosmed"
-                android:layout_height="@dimen/iv_icon_sosmed"
-                android:layout_margin="@dimen/margin_icon_sosmed"
-                android:src="@mipmap/ic_launcher"
-                />
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="@dimen/iv_icon_sosmed"
-                android:layout_height="@dimen/iv_icon_sosmed"
-                android:layout_margin="@dimen/margin_icon_sosmed"
-                android:src="@mipmap/ic_launcher"
-                />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/layoutAboutt"
+                    android:src="@drawable/putih_kertas"
+                    android:scaleType="centerCrop"
+                    />
 
-            <ImageView
-                android:layout_width="@dimen/iv_icon_sosmed"
-                android:layout_height="@dimen/iv_icon_sosmed"
-                android:layout_margin="@dimen/margin_icon_sosmed"
-                android:src="@mipmap/ic_launcher"
-                />
+                <LinearLayout
+                    android:id="@+id/layoutAboutt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="@dimen/iv_icon_sosmed"
-                android:layout_height="@dimen/iv_icon_sosmed"
-                android:layout_margin="@dimen/margin_icon_sosmed"
-                android:src="@mipmap/ic_launcher"
-                />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-            <ImageView
-                android:layout_width="@dimen/iv_on_title"
-                android:layout_height="@dimen/iv_on_title"
-                android:src="@drawable/ic_launcher_background"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/contact_us"
-                android:textStyle="bold"
-                android:textSize="@dimen/text_title_size"
-                />
-        </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/contact_us_description"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/bt_sponsor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cornerRadius="40dp"
-                android:layout_margin="5dp"
-                android:text="Sponsor"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/bt_mediapartner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cornerRadius="40dp"
-                android:layout_margin="5dp"
-                android:text="Media Partner"
-                />
-        </LinearLayout>
-    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/syncopate_bold"
+                            android:text="@string/meta_corporation"
+                            android:textColor="@color/pallet_red"
+                            android:textSize="@dimen/text_title_size" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/deskripsi_about_us"
+                            android:textAlignment="center"
+                            android:textColor="@color/pallet_gray"
+                            android:textSize="@dimen/tv_body_progam" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/iv_icon_sosmed"
+                                android:layout_height="@dimen/iv_icon_sosmed"
+                                android:layout_margin="@dimen/margin_icon_sosmed"
+                                android:src="@mipmap/ic_launcher" />
+
+                            <ImageView
+                                android:layout_width="@dimen/iv_icon_sosmed"
+                                android:layout_height="@dimen/iv_icon_sosmed"
+                                android:layout_margin="@dimen/margin_icon_sosmed"
+                                android:src="@mipmap/ic_launcher" />
+
+                            <ImageView
+                                android:layout_width="@dimen/iv_icon_sosmed"
+                                android:layout_height="@dimen/iv_icon_sosmed"
+                                android:layout_margin="@dimen/margin_icon_sosmed"
+                                android:src="@mipmap/ic_launcher" />
+
+                            <ImageView
+                                android:layout_width="@dimen/iv_icon_sosmed"
+                                android:layout_height="@dimen/iv_icon_sosmed"
+                                android:layout_margin="@dimen/margin_icon_sosmed"
+                                android:src="@mipmap/ic_launcher" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/contact_us_description"
+                            android:textAlignment="center"
+                            android:textColor="@color/pallet_gray"
+                            android:textSize="@dimen/tv_body_progam" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/syncopate_bold"
+                            android:text="@string/sponsor"
+                            android:textColor="@color/pallet_red"
+                            android:textSize="@dimen/text_title_size" />
+                        <!--TODO:SPONSOR VIEW-->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_150sdp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/syncopate_bold"
+                            android:text="@string/media_partner"
+                            android:textColor="@color/pallet_red"
+                            android:textSize="@dimen/text_title_size" />
+                        <!--TODO:MEDPART VIEW-->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_150sdp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="@string/credit_title"
+                        android:textColor="@color/pallet_gray"
+                        app:cornerRadius="0dp"
+                        app:strokeColor="@color/pallet_gray"
+                        app:strokeWidth="@dimen/_2sdp" />
+
+                    <!--<ImageView
+                        android:id="@+id/logomedia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_launcher_background"
+                        android:layout_margin="15dp"
+                        />-->
+                    <!--<LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="@dimen/iv_on_title"
+                                android:layout_height="@dimen/iv_on_title"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/about_us"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_title_size"
+                                />
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/deskripsi_about_us"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="@dimen/iv_icon_sosmed"
+                                android:layout_height="@dimen/iv_icon_sosmed"
+                                android:layout_margin="@dimen/margin_icon_sosmed"
+                                android:src="@mipmap/ic_launcher"
+                                />
+
+                            <ImageView
+                                android:layout_width="@dimen/iv_icon_sosmed"
+                                android:layout_height="@dimen/iv_icon_sosmed"
+                                android:layout_margin="@dimen/margin_icon_sosmed"
+                                android:src="@mipmap/ic_launcher"
+                                />
+
+                            <ImageView
+                                android:layout_width="@dimen/iv_icon_sosmed"
+                                android:layout_height="@dimen/iv_icon_sosmed"
+                                android:layout_margin="@dimen/margin_icon_sosmed"
+                                android:src="@mipmap/ic_launcher"
+                                />
+
+                            <ImageView
+                                android:layout_width="@dimen/iv_icon_sosmed"
+                                android:layout_height="@dimen/iv_icon_sosmed"
+                                android:layout_margin="@dimen/margin_icon_sosmed"
+                                android:src="@mipmap/ic_launcher"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>-->
+                    <!--<LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="@dimen/iv_on_title"
+                                android:layout_height="@dimen/iv_on_title"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/contact_us"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/text_title_size"
+                                />
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_us_description"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/bt_sponsor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cornerRadius="40dp"
+                                android:layout_margin="5dp"
+                                android:text="Sponsor"
+                                />
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/bt_mediapartner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cornerRadius="40dp"
+                                android:layout_margin="5dp"
+                                android:text="Media Partner"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
 
 </LinearLayout>

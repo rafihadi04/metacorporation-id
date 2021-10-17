@@ -10,16 +10,16 @@
         android:orientation="vertical"
         android:padding="15dp">
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:cardCornerRadius="400dp"
+            android:layout_width="@dimen/program_image_sizeXY"
+            android:layout_height="@dimen/program_image_sizeXY"
+            app:cardCornerRadius="@dimen/_20sdp"
             >
             <ImageView
                 android:id="@+id/iv_program"
-                android:layout_width="@dimen/program_image_sizeXY"
-                android:layout_height="@dimen/program_image_sizeXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                tools:src="@drawable/ic_launcher_background"/>
+                tools:src="@color/pallet_red"/>
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tv_program"
@@ -28,8 +28,9 @@
             android:text="Nama Program"
             android:gravity="center"
             android:layout_marginTop="12dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/pallet_white"
             android:layout_gravity="bottom"/>
     </LinearLayout>
 </FrameLayout>

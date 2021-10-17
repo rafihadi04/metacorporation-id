@@ -12,7 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <TextView
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/meta_corporation_colored_black"
+            />
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
@@ -20,7 +25,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textSize="@dimen/_12sdp"
-            android:fontFamily="@font/syncopate_bold"/>
+            android:fontFamily="@font/syncopate_bold"/>-->
     </Toolbar>
 
 
@@ -37,35 +42,7 @@
             android:visibility="gone"
             android:src="@drawable/ic_launcher_background"/>
 
-        <id.metacorporation.utils.NestedScrollableHost
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/banner_program"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:sliderAnimationDuration="600"
-                app:sliderAutoCycleDirection="back_and_forth"
-                app:sliderAutoCycleEnabled="true"
-                app:sliderIndicatorAnimationDuration="600"
-                app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderIndicatorMargin="15dp"
-                app:sliderIndicatorOrientation="horizontal"
-                app:sliderIndicatorPadding="3dp"
-                app:sliderIndicatorRadius="2dp"
-                app:sliderIndicatorSelectedColor="#5A5A5A"
-                app:sliderIndicatorUnselectedColor="#FFF"
-                app:sliderScrollTimeInSec="1"
-                app:sliderStartAutoCycle="true"
-                android:scrollbarAlwaysDrawHorizontalTrack="true"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="always"
-                />
-
-        </id.metacorporation.utils.NestedScrollableHost>
-
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
@@ -73,13 +50,72 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
+                <id.metacorporation.utils.NestedScrollableHost
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/banner_program"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleDirection="back_and_forth"
+                        app:sliderAutoCycleEnabled="true"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorGravity="center_horizontal|bottom"
+                        app:sliderIndicatorMargin="15dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="#5A5A5A"
+                        app:sliderIndicatorUnselectedColor="#FFF"
+                        app:sliderScrollTimeInSec="1"
+                        app:sliderStartAutoCycle="true"
+                        android:scrollbarAlwaysDrawHorizontalTrack="true"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="always"
+                        />
+
+                </id.metacorporation.utils.NestedScrollableHost>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/white"
+                    android:padding="@dimen/_25sdp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                    <TextView
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:id="@+id/btStreamTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/streaming_tv"
+                            android:textColor="@color/pallet_gray"
+                            app:strokeColor="@color/pallet_gray"
+                            app:strokeWidth="@dimen/_2sdp"
+                            app:cornerRadius="0dp"
+                             />
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:id="@+id/btStreamRadio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="@string/streaming_radio"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/pallet_gray"
+                            app:strokeColor="@color/pallet_gray"
+                            app:strokeWidth="@dimen/_2sdp"
+                            app:cornerRadius="0dp"/>
+                    </LinearLayout>
+                    <!--<TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/tv_margin_start"
@@ -98,10 +134,149 @@
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             android:orientation="horizontal"
                             tools:itemCount="3"/>
-                    </id.metacorporation.utils.NestedScrollableHost>
+                    </id.metacorporation.utils.NestedScrollableHost>-->
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/pallet_gray"
+                    android:padding="@dimen/_20sdp"
+
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jadwal_nsiaran"
+                        android:textSize="@dimen/_15sdp"
+                        android:textAlignment="center"
+                        android:lineSpacingExtra="@dimen/_2sdp"
+                        android:fontFamily="@font/syncopate_bold"
+                        android:textColor="#B90D27"/>
+
+                    <!--
+                        TODO:Layout jadwal
+                    -->
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="SELASA 10 NOV"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/pallet_white"
+                        app:strokeColor="@color/pallet_white"
+                        app:strokeWidth="@dimen/_2sdp"
+                        app:cornerRadius="0dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:letterSpacing="0.2"
+                            android:text="@string/program_tv"
+                            android:textSize="@dimen/_15sdp"
+                            android:textColor="#F9CF00"
+                            android:textStyle="italic" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_jadwal_programtv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/jam_program_layout"
+                            tools:itemCount="5"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/program_radio"
+                            android:textSize="@dimen/_15sdp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:letterSpacing="0.2"
+                            android:textColor="#F9CF00"
+                            android:textStyle="italic"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/rv_jadwal_programradio"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/jam_program_layout"
+                            tools:itemCount="5"
+                            android:nestedScrollingEnabled="false"
+
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F9CF00"
+                    android:gravity="center"
+                    android:padding="@dimen/_20sdp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="BERITA UTAMA"
+                        android:textColor="#B90D27"
+                        android:fontFamily="@font/syncopate_bold"
+                        android:textSize="@dimen/_15sdp"
+                        />
+                    <id.metacorporation.utils.NestedScrollableHost
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/bannerBerita"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            app:sliderAnimationDuration="600"
+                            app:sliderAutoCycleDirection="back_and_forth"
+                            app:sliderAutoCycleEnabled="true"
+                            app:sliderIndicatorAnimationDuration="600"
+                            app:sliderIndicatorGravity="center_horizontal|bottom"
+                            app:sliderIndicatorMargin="15dp"
+                            app:sliderIndicatorOrientation="horizontal"
+                            app:sliderIndicatorPadding="3dp"
+                            app:sliderIndicatorRadius="2dp"
+                            app:sliderIndicatorSelectedColor="#5A5A5A"
+                            app:sliderIndicatorUnselectedColor="#FFF"
+                            app:sliderScrollTimeInSec="1"
+                            app:sliderStartAutoCycle="true"
+                            android:scrollbarAlwaysDrawHorizontalTrack="true"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="always"
+                            />
+
+                    </id.metacorporation.utils.NestedScrollableHost>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_50sdp"/>
+                </LinearLayout>
+
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -128,9 +303,9 @@
                             tools:itemCount="3"/>
                     </id.metacorporation.utils.NestedScrollableHost>
 
-                </LinearLayout>
+                </LinearLayout>-->
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 
 

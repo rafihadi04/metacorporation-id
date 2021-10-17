@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/bottomNav"
         android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         tools:layout="@layout/fragment_home" />
     <!--androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -28,9 +29,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_up"
+        android:padding="@dimen/_5sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        app:cnb_menuResource="@menu/navmenu"
+        app:cnb_unselectedColor="@color/pallet_white" />
 
-        android:background="@color/white"
-        app:cnb_menuResource="@menu/navmenu" />
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        app:itemRippleColor="@drawable/ic_color_selector"
+        app:menu="@menu/navmenu"/>-->
 
 
 </RelativeLayout>

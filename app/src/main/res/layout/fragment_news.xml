@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.NewsFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -22,10 +23,11 @@
                 />
             <com.google.android.material.progressindicator.LinearProgressIndicator
                 android:id="@+id/webviewLoading"
-                android:layout_gravity="bottom"
+                android:layout_gravity="top"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:indeterminate="false"
+                app:indicatorColor="@color/pallet_red"
                 android:background="@color/white"/>
 
         </FrameLayout>
