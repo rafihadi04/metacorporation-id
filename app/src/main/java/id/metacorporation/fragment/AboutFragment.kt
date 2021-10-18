@@ -6,6 +6,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.net.Uri
 import android.os.Bundle
 import android.os.SystemClock
 import androidx.fragment.app.Fragment
@@ -13,12 +14,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import id.metacorporation.MainActivity
 import id.metacorporation.R
 import id.metacorporation.enum.NotificationID
+import id.metacorporation.usecase.MainActivityUseCase
 import id.metacorporation.utils.ProgramNotificationReceiver
+import java.lang.Exception
 
 class AboutFragment : Fragment() {
+
+    private lateinit var ivInstagram: ImageView
+    private lateinit var ivTiktok: ImageView
+    private lateinit var ivTwitter: ImageView
+    private lateinit var ivLinkedin: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,6 +61,33 @@ class AboutFragment : Fragment() {
                 pendingIntent
             )
         }*/
+        ivInstagram = view.findViewById(R.id.iv_instagram)
+        ivLinkedin = view.findViewById(R.id.iv_linkedin)
+        ivTiktok = view.findViewById(R.id.iv_tiktok)
+        ivTwitter = view.findViewById(R.id.iv_twitter)
+        setImageListener()
+    }
+
+    private fun setImageListener() {
+        val link = arrayListOf(
+            getString(R.string.link_instagram),
+            getString(R.string.link_linkedin),
+            getString(R.string.link_tiktok),
+            getString(R.string.link_twitter)
+        )
+        arrayListOf(ivInstagram,ivLinkedin,ivTiktok,ivTwitter).withIndex().forEach { image->
+            image.value.setOnClickListener{
+                try{
+                    startActivity(
+                        Intent(Intent.ACTION_VIEW)
+                            .setData(Uri.parse(link[image.index]))
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    )
+                }catch(e:Exception){
+                    (requireActivity() as MainActivityUseCase).onError("Something went wrong! Pls open it manually ${link[image.index]}")
+                }
+            }
+        }
     }
 
     override fun onResume() {

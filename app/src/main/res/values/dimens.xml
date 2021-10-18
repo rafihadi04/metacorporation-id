@@ -5,7 +5,7 @@
     <dimen name="tv_margin_start">@dimen/_10sdp</dimen>
     <dimen name="logo_height_size">@dimen/_50sdp</dimen>
     <dimen name="iv_on_title">@dimen/_25sdp</dimen>
-    <dimen name="iv_icon_sosmed">@dimen/_35sdp</dimen>
+    <dimen name="iv_icon_sosmed">@dimen/_25sdp</dimen>
     <dimen name="margin_icon_sosmed">@dimen/_5sdp</dimen>
     <dimen name="text_size_livechat">@dimen/_13sdp</dimen>
     <dimen name="live_chat_height">@dimen/_45sdp</dimen>

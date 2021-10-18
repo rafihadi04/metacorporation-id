@@ -35,9 +35,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/layoutAboutt"
-                    android:src="@drawable/putih_kertas"
                     android:scaleType="centerCrop"
-                    />
+                    android:src="@drawable/putih_kertas" />
 
                 <LinearLayout
                     android:id="@+id/layoutAboutt"
@@ -69,36 +68,50 @@
                             android:fontFamily="@font/montserrat"
                             android:text="@string/deskripsi_about_us"
                             android:textAlignment="center"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:textColor="@color/pallet_gray"
                             android:textSize="@dimen/tv_body_progam" />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp">
 
                             <ImageView
+                                android:id="@+id/iv_instagram"
+                                android:clickable="true"
                                 android:layout_width="@dimen/iv_icon_sosmed"
                                 android:layout_height="@dimen/iv_icon_sosmed"
                                 android:layout_margin="@dimen/margin_icon_sosmed"
-                                android:src="@mipmap/ic_launcher" />
+                                android:src="@drawable/instagram"
+                                android:focusable="true" />
 
                             <ImageView
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/iv_tiktok"
                                 android:layout_width="@dimen/iv_icon_sosmed"
                                 android:layout_height="@dimen/iv_icon_sosmed"
                                 android:layout_margin="@dimen/margin_icon_sosmed"
-                                android:src="@mipmap/ic_launcher" />
+                                android:src="@drawable/tiktok" />
 
                             <ImageView
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/iv_twitter"
                                 android:layout_width="@dimen/iv_icon_sosmed"
                                 android:layout_height="@dimen/iv_icon_sosmed"
                                 android:layout_margin="@dimen/margin_icon_sosmed"
-                                android:src="@mipmap/ic_launcher" />
+                                android:src="@drawable/twitter" />
 
                             <ImageView
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/iv_linkedin"
                                 android:layout_width="@dimen/iv_icon_sosmed"
                                 android:layout_height="@dimen/iv_icon_sosmed"
                                 android:layout_margin="@dimen/margin_icon_sosmed"
-                                android:src="@mipmap/ic_launcher" />
+                                android:src="@drawable/linkedin" />
                         </LinearLayout>
 
 
@@ -108,6 +121,7 @@
                             android:fontFamily="@font/montserrat"
                             android:text="@string/contact_us_description"
                             android:textAlignment="center"
+                            android:layout_marginTop="@dimen/_10sdp"
                             android:textColor="@color/pallet_gray"
                             android:textSize="@dimen/tv_body_progam" />
                     </LinearLayout>

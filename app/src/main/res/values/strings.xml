@@ -17,13 +17,17 @@
         cuhaks aku gatau ini mau di isi apaan. Yoroshikuonengaisimasu!
     </string>
     <string name="contact_us">Contact Us</string>
-    <string name="contact_us_description">ini di isi contact kalian ges</string>
+    <string name="contact_us_description"><b>Meta Corporation</b>\n<br/>Jalan Magelang KM.6 Sleman Yogyakarta<br/>official@metacorporation.id</string>
     <string name="toast_double_back">Tekan sekali lagi untuk mengeluarkan</string>
     <string name="youtube_live_tv">awWVru0nwMY</string>
     <string name="youtube_live_radio">2cP4sE5l-B8</string>
     <string name="twitter">Twitter</string>
+    <string name="link_twitter">https://www.twitter.com/metacorp_id</string>
     <string name="instagram">Instagram</string>
+    <string name="link_instagram">https://www.instagram.com/metacorp_id</string>
     <string name="tiktok">Tiktok</string>
+    <string name="link_tiktok">https://www.tiktok.com/@metacorp_id</string>
+    <string name="link_linkedin">https://www.linkedin.com/company/meta-corporation-2021</string>
     <string name="whatsapp">WhatsApp</string>
     <string name="youtube">Youtube</string>
     <string name="facebook">Facebook</string>
@@ -39,4 +43,5 @@
     <string name="program_tv">Program TV</string>
     <string name="program_radio">Program Radio</string>
     <string name="live_chat">LIVE CHAT</string>
+    <string name="link_news">https://news.metacorporation.id</string>
 </resources>

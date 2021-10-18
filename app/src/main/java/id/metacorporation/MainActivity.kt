@@ -193,5 +193,9 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
         //bottomNav.background.setTint(getColor(R.color.pallet_white))
     }
 
+    override fun onError(msg: String) {
+        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+    }
+
 
 }

@@ -63,7 +63,7 @@ class NewsFragment : Fragment() {
 
         with(wvNews) {
             postDelayed({
-                loadUrl("https://alinea.mmtc.ac.id")
+                loadUrl(context.getString(R.string.link_news))
                 settings.javaScriptEnabled=true
                 settings.mixedContentMode = WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
                 webViewClient = object : WebViewClient(){

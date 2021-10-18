@@ -4,6 +4,8 @@ import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
@@ -22,12 +24,15 @@ class StartupReceiver:BroadcastReceiver() {
     private fun showNotification(context: Context){
 
         val notificationBuilder = NotificationCompat.Builder(context, "Program")
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setSmallIcon(R.drawable.ic_white_fix)
             .setContentTitle("Aplikasi Berjalan di Background")
             //.setContentIntent(intent)
             .setContentText("Ketuk untuk memberhentikan")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            notificationBuilder.color = Color.argb(100,185,13, 39)
+        }
 
         with(NotificationManagerCompat.from(context)){
             notify(9092,notificationBuilder.build())
