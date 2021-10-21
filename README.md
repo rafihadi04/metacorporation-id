@@ -10,7 +10,7 @@ metacorporation-id merupakan aplikasi streaming yang dibuat untuk Meta Corporati
 Dalam pengerjaan aplikasi ini, terdapat kerabat kerja app development terdiri dari:
 * [Rafi Heldiansyah Adi](https://github.com/rafihadi04) 
 * [Bambang Murdaningrum](https://github.com/Hyman99)
-* [Herwinda Nuha N](https://github.com/herwindanuha)
+* [Herwinda Nuha Nuzullata](https://github.com/herwindanuha)
 
 ## Credits
 Library credits belongs to:
