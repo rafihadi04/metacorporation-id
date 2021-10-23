@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,10 +17,15 @@ import com.smarteist.autoimageslider.SliderView
 import id.metacorporation.adapter.BannerAdapter
 import id.metacorporation.R
 import id.metacorporation.adapter.JadwalAdapter
+import id.metacorporation.adapter.NewsAdapter
 import id.metacorporation.enum.TopProgramType
+import id.metacorporation.models.Posts
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
 import id.metacorporation.usecase.MainActivityUseCase
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class HomeFragment(val dataRepository: DataRepository) : Fragment() {
@@ -27,6 +33,7 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
     lateinit var rvTopProgramTv :RecyclerView
     lateinit var rvTopProgramRadio :RecyclerView
     lateinit var slider :SliderView
+    lateinit var newsSlider :SliderView
     lateinit var btStreamTV :MaterialButton
     lateinit var btStreamRadio :MaterialButton
 
@@ -40,6 +47,7 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
         rvTopProgramTv = viewFragment.findViewById(R.id.rv_jadwal_programtv)
         rvTopProgramRadio = viewFragment.findViewById(R.id.rv_jadwal_programradio)
         slider = viewFragment.findViewById(R.id.banner_program)
+        newsSlider = viewFragment.findViewById(R.id.bannerBerita)
 
         @SuppressLint("SourceLockedOrientationActivity")
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
@@ -58,12 +66,39 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
         setButtonListener()
         showJadwalProgram(programRadio,programTv)
         showBanner(context, dataRepository.getBanner())
+        //showBannerBerita()
+        dataRepository.getNews(
+            object: Callback<ArrayList<Posts>>{
+                override fun onResponse(
+                    call: Call<ArrayList<Posts>>,
+                    response: Response<ArrayList<Posts>>
+                ) {
+                    showBannerBerita(ArrayList(response.body()!!.subList(0,4)))
+                }
+
+                override fun onFailure(call: Call<ArrayList<Posts>>, t: Throwable) {
+                    Log.e(this.javaClass.simpleName,t.toString())
+                    (activity as MainActivityUseCase).onError("Periksa kembali koneksi kamu!")
+                }
+
+            }
+        )
 
         /*Thread({
             Log.d(this.javaClass.simpleName,Thread.currentThread().name)
         },"ShowBanner").start()*/
 
         return viewFragment
+    }
+
+    private fun showBannerBerita(body: ArrayList<Posts>) {
+        newsSlider.setSliderAdapter(
+            NewsAdapter(requireContext(),body)
+        )
+        newsSlider.setIndicatorAnimation(IndicatorAnimationType.COLOR)
+        newsSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
+        newsSlider.scrollTimeInSec = 5
+        newsSlider.startAutoCycle()
     }
 
     private fun setButtonListener() {
@@ -80,6 +115,7 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
         super.onResume()
         @SuppressLint("SourceLockedOrientationActivity")
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        (requireActivity() as MainActivityUseCase).whiteNavBar()
     }
 
 
