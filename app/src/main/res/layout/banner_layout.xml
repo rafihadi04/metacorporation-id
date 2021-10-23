@@ -32,10 +32,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
             android:padding="6dp"
             android:textColor="#FFF"
-            android:textSize="18sp" />
+
+            android:textSize="@dimen/_12sdp" />
 
     </FrameLayout>
 

@@ -30,11 +30,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/rounded_up"
-        android:padding="@dimen/_5sdp"
-        android:paddingStart="@dimen/_15sdp"
-        android:paddingEnd="@dimen/_15sdp"
+        android:backgroundTint="@color/pallet_white"
+        android:elevation="@dimen/_10sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        app:cnb_addTopInset="false"
         app:cnb_menuResource="@menu/navmenu"
-        app:cnb_unselectedColor="@color/pallet_white" />
+        app:cnb_orientationMode="horizontal"
+        app:cnb_unselectedColor="@color/pallet_red" />
 
     <!--<com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

@@ -115,7 +115,7 @@
                         android:id="@+id/ratingProgramUmurTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/montserrat"
                         android:text="Dokumenter | SU"
                         android:textColor="@color/pallet_white"
                         android:textSize="@dimen/_12sdp" />
@@ -134,12 +134,12 @@
                         android:src="@drawable/rounded" />
 
                     <TextView
+                        android:id="@+id/liveChatButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:fontFamily="@font/syncopate_bold"
                         android:text="@string/live_chat"
-                        android:id="@+id/liveChatButton"
                         android:textColor="@color/pallet_white" />
                 </LinearLayout>
 
@@ -148,7 +148,7 @@
                     android:id="@+id/liveChatLayout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_100sdp"
-                    />
+                    android:visibility="gone" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -172,7 +172,6 @@
                         tools:listitem="@layout/program_layout" />
 
                 </LinearLayout>
-
 
 
                 <!--<LinearLayout
@@ -264,7 +263,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"/>
+                    android:layout_height="@dimen/_50sdp" />
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
