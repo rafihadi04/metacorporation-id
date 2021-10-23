@@ -4,11 +4,21 @@ import id.metacorporation.R
 import id.metacorporation.enum.SosmedType
 import id.metacorporation.enum.TopProgramType
 import id.metacorporation.models.JobdeskModel
+import id.metacorporation.models.Posts
 import id.metacorporation.models.PresenterModel
 import id.metacorporation.models.ProgramModel
+import retrofit2.Callback
+import retrofit2.Retrofit
 import kotlin.collections.ArrayList
 
 class DataRepository {
+
+    private val newsAPI: NewsAPI = NewsAPIBuilder.getNewsAPI().create(NewsAPI::class.java)
+
+    fun getNews(callback: Callback<ArrayList<Posts>>){
+        val call = newsAPI.getPosts()
+        call.enqueue(callback)
+    }
 
     /**
      * Mengambil data seluruh Program TV
