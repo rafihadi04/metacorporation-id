@@ -7,8 +7,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
@@ -184,13 +187,17 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
     }
 
     override fun blackNavBar() {
-        //bottomNav.background.setTint(getColor(R.color.pallet_gray))
+        if(window.statusBarColor!= getColor(R.color.pallet_gray)) window.decorView.systemUiVisibility-=View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        bottomNav.background.setTint(getColor(R.color.pallet_gray))
+        window.statusBarColor = getColor(R.color.pallet_gray)
         //bottomNav.saveAttributeDataForStyleable()
         //bottomNav.setMenuResource()
     }
 
     override fun whiteNavBar() {
-        //bottomNav.background.setTint(getColor(R.color.pallet_white))
+        if(window.statusBarColor!= getColor(R.color.pallet_white)) window.decorView.systemUiVisibility+=View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        window.statusBarColor = getColor(R.color.pallet_white)
+        bottomNav.background.setTint(getColor(R.color.pallet_white))
     }
 
     override fun onError(msg: String) {
