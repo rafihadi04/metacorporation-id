@@ -94,6 +94,7 @@ class AboutFragment : Fragment() {
         super.onResume()
         @SuppressLint("SourceLockedOrientationActivity")
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        (requireActivity() as MainActivityUseCase).whiteNavBar()
     }
     /*fun showNotification(title:String,contentText:String, icon:Int=R.drawable.ic_tv){
         Log.d("Notification","show $title, $contentText")

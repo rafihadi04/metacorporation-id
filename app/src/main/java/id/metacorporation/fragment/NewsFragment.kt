@@ -30,6 +30,7 @@ import androidx.core.view.postDelayed
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.snackbar.Snackbar
 import id.metacorporation.R
+import id.metacorporation.usecase.MainActivityUseCase
 import java.io.InputStream
 
 class NewsFragment : Fragment() {
@@ -195,6 +196,7 @@ class NewsFragment : Fragment() {
         super.onResume()
         @SuppressLint("SourceLockedOrientationActivity")
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        (requireActivity() as MainActivityUseCase).whiteNavBar()
     }
 
     private fun setOnBackWebView() {

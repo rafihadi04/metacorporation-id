@@ -25,6 +25,7 @@ import id.metacorporation.R
 import id.metacorporation.adapter.ProgramAdapter
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
+import id.metacorporation.usecase.MainActivityUseCase
 import kotlin.properties.Delegates
 
 
@@ -155,6 +156,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
         if (this.youtubePlayer != null) {
             this.youtubePlayer!!.play()
         }
+        (requireActivity() as MainActivityUseCase).blackNavBar()
     }
 
     /**

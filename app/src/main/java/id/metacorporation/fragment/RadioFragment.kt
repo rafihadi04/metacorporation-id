@@ -26,6 +26,7 @@ import id.metacorporation.R
 import id.metacorporation.adapter.ProgramAdapter
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
+import id.metacorporation.usecase.MainActivityUseCase
 
 class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var rvProgramRadio : RecyclerView
@@ -90,6 +91,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
         super.onResume()
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
         youtubePlayer?.play()
+        (requireActivity() as MainActivityUseCase).blackNavBar()
 
     }
 
