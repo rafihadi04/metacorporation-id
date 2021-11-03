@@ -14,7 +14,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toolbar
 import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.RecyclerView
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
@@ -37,6 +39,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var livechat:View
     private lateinit var livechatTitle : TextView
     private lateinit var logo :ImageView
+    private lateinit var toolbar: RelativeLayout
     private var youtubePlayer :YouTubePlayer? = null
     private var callback: OnBackPressedCallback? = null
 
@@ -59,6 +62,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
         navbar.visibility = savedInstanceState?.getInt("NavBar") ?: View.VISIBLE
 
         logo = viewFragment.findViewById(R.id.logoTV)
+        toolbar = viewFragment.findViewById(R.id.toolbar)
 
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
@@ -182,6 +186,8 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
             callback!!.isEnabled=true
         }
 
+        toolbar.visibility=View.GONE
+
         val decorView = requireActivity().window.decorView
         hideNavBar(decorView)
         if(resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE){
@@ -216,6 +222,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     fun exitFullScreen(){
         //removeOnBackFullScreen()
         callback!!.isEnabled=false
+        toolbar.visibility=View.VISIBLE
         val decorView = requireActivity().window.decorView
         showNavBar(decorView)
         if(resources.configuration.orientation != Configuration.ORIENTATION_PORTRAIT){

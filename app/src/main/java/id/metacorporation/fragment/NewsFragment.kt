@@ -10,28 +10,20 @@ import android.net.NetworkCapabilities
 import android.net.http.SslError
 import android.os.Build
 import android.os.Bundle
-import android.os.ParcelFileDescriptor.open
-import android.system.Os.open
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
 import android.webkit.*
-import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
-import androidx.core.view.contains
-import androidx.core.view.marginBottom
-import androidx.core.view.postDelayed
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.snackbar.Snackbar
 import id.metacorporation.R
 import id.metacorporation.usecase.MainActivityUseCase
-import java.io.InputStream
 
 class NewsFragment : Fragment() {
     lateinit var wvNews :WebView
@@ -67,6 +59,8 @@ class NewsFragment : Fragment() {
                 loadUrl(context.getString(R.string.link_news))
                 settings.javaScriptEnabled=true
                 settings.mixedContentMode = WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
+                settings.databaseEnabled=true
+                settings.domStorageEnabled=true
                 webViewClient = object : WebViewClient(){
                     private var isError = false
                     private var isFirstError = true
@@ -216,15 +210,11 @@ class NewsFragment : Fragment() {
 
     fun isNetworkAvailable(context: Context) =
         (context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).run {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                getNetworkCapabilities(activeNetwork)?.run {
-                    hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
-                            || hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
-                            || hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
-                } ?: false
-            } else {
-                true
-            }
+            getNetworkCapabilities(activeNetwork)?.run {
+                hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
+                        || hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
+                        || hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
+            } ?: false
         }
 
     private val displayErrorContentCode by lazy {

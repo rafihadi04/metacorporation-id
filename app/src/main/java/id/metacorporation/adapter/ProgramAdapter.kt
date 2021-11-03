@@ -64,6 +64,19 @@ class ProgramAdapter(
             programList[position].namaProgram.uppercase()
         bottomSheetDialog.findViewById<TextView>(R.id.tv_program_deskripsi)!!.text =
             programList[position].deskripsiProgram
+        bottomSheetDialog.findViewById<TextView>(R.id.detilJadwalProgramTv)!!.text =
+            programList[position].jadwal
+        bottomSheetDialog.findViewById<TextView>(R.id.ratingProgramUmurTv)!!.text =
+            programList[position].rating
+        bottomSheetDialog.findViewById<TextView>(R.id.detilJenisProgram)!!.text =
+            programList[position].jenisProgram
+        bottomSheetDialog.findViewById<TextView>(R.id.detilPembawaAcara)!!.text =
+            programList[position].detilPembawaAcara.uppercase()
+
+        Glide.with(context)
+            .load(programList[position].fotoPembawaAcara)
+            .diskCacheStrategy( DiskCacheStrategy.ALL )
+            .into(bottomSheetDialog.findViewById<ImageView>(R.id.ivPembawaAcara)!!)
 
         //val lyt = bottomSheetDialog.findViewById<LinearLayout>(R.id.layoutDetilProgram)
         //bottomSheetDialog.behavior.peekHeight = 100
@@ -71,7 +84,8 @@ class ProgramAdapter(
         val ytView = bottomSheetDialog.findViewById<YouTubePlayerView>(R.id.youtubeView)
         val imageView = bottomSheetDialog.findViewById<ImageView>(R.id.bannerProgram)
         val rvKru = bottomSheetDialog.findViewById<RecyclerView>(R.id.rvJobdesk)
-        rvKru?.adapter = JobdeskAdapter(
+        rvKru?.adapter = PresenterAdapter(
+            context,
             programList[position].kruJobdesk
         )
         when {

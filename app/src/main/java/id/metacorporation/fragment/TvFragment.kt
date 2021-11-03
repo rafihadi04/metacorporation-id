@@ -1,22 +1,36 @@
 package id.metacorporation.fragment
 
 import android.annotation.SuppressLint
+import android.app.Notification
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.content.res.Configuration.ORIENTATION_LANDSCAPE
 import android.content.res.Configuration.ORIENTATION_PORTRAIT
+import android.graphics.Color
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.util.Log
 import android.view.*
+import android.webkit.WebChromeClient
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener
@@ -37,8 +51,11 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var youTubePlayerView :YouTubePlayerView
     ///*EXPERIMENTAL*/private lateinit var youtubeView :YouTubeView
     private lateinit var navbar: ChipNavigationBar
-    private lateinit var livechat:View
+    private lateinit var livechat: WebView
     private lateinit var livechatTitle :TextView
+    private lateinit var scrollView :NestedScrollView
+    private lateinit var lastState :PlayerConstants.PlayerState
+    private lateinit var toolbar :RelativeLayout
     private var youtubePlayer :YouTubePlayer? = null
     private var mOriginalHeight by Delegates.notNull<Int>()
     private var isFullscreen :Boolean = false
@@ -64,10 +81,12 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
         /*rvPresenterTv = viewFragment.findViewById(R.id.rv_presenter_tv)*/
         rvProgramTv = viewFragment.findViewById(R.id.rv_our_programtv)
 
-        livechat = viewFragment.findViewById(R.id.liveChatLayout)
+        livechat = viewFragment.findViewById(R.id.livechatWebview)
         livechatTitle = viewFragment.findViewById(R.id.liveChatButton)
 
         navbar = requireActivity().findViewById(R.id.bottomNav)
+        toolbar = viewFragment.findViewById(R.id.toolbar)
+        scrollView = viewFragment.findViewById(R.id.scrollViewTvRadio)
 
         /*livechat.post{
             mOriginalHeight=livechat.height
@@ -80,6 +99,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
             setLiveChatListener()
             setyoutubeLink(getString(R.string.youtube_live_tv))
         }
+        liveChatInit()
 
         //EXPERIMENTAL
         //youtubeView = viewFragment.findViewById(R.id.youtubeView)
@@ -98,6 +118,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
         return viewFragment
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setLiveChatListener() {
         livechatTitle.setOnClickListener {
             if(livechat.visibility==View.GONE){
@@ -106,6 +127,11 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
                 livechat.visibility=View.GONE
             }
         }
+        livechat.setOnTouchListener { v, event ->
+            scrollView.requestDisallowInterceptTouchEvent(true)
+            false
+        }
+
     }
 
     /**
@@ -222,6 +248,21 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
                     )
                     //super.onReady(youTubePlayer)
                 }
+
+                override fun onStateChange(
+                    youTubePlayer: YouTubePlayer,
+                    state: PlayerConstants.PlayerState
+                ) {
+                    super.onStateChange(youTubePlayer, state)
+                    when(state){
+                        PlayerConstants.PlayerState.PLAYING -> {}
+                        PlayerConstants.PlayerState.PAUSED -> {}
+                        PlayerConstants.PlayerState.UNSTARTED -> {}
+                        else -> true
+                    }
+                    lastState = state
+                    Log.d(this@TvFragment.javaClass.simpleName, "state changed: ${state.name}")
+                }
             },handleNetworkEvents = true
         )
     }
@@ -262,6 +303,8 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
             callback!!.isEnabled=true
         }
 
+        toolbar.visibility=View.GONE
+
         val decorView = requireActivity().window.decorView
         hideNavBar(decorView)
         if(resources.configuration.orientation != ORIENTATION_LANDSCAPE){
@@ -296,6 +339,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
     fun exitFullScreen(){
         //removeOnBackFullScreen()
         callback!!.isEnabled=false
+        toolbar.visibility=View.VISIBLE
         val decorView = requireActivity().window.decorView
         showNavBar(decorView)
         if(resources.configuration.orientation != ORIENTATION_PORTRAIT){
@@ -356,6 +400,47 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
             youTubePlayerView.exitFullScreen()
         }
     }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun liveChatInit(){
+        livechat.loadUrl("https://minnit.chat/iontv?embed")
+        livechat.settings.javaScriptEnabled=true
+        livechat.settings.setSupportMultipleWindows(true)
+        livechat.webViewClient=object :WebViewClient(){
+            override fun shouldOverrideUrlLoading(
+                view: WebView?,
+                request: WebResourceRequest?
+            ): Boolean {
+
+                // Use a CustomTabsIntent.Builder to configure CustomTabsIntent.
+                val url = request!!.url
+                val builder = CustomTabsIntent.Builder()
+                val customTabsIntent = builder.build()
+                customTabsIntent.launchUrl(requireContext(), Uri.parse(url.toString()))
+
+                return false
+            }
+        }
+        livechat.webChromeClient=WebChromeClient()
+    }
+
+    /*private fun mediaPlayerNotification(){
+        val notificationBuilder = NotificationCompat.Builder(requireContext(),"Player")
+            .setSmallIcon(R.drawable.ic_white_fix)
+            .setContentTitle("Aplikasi Berjalan di Background")
+            //.setContentIntent(intent)
+            .setContentText("Ketuk untuk memberhentikan")
+            .setStyle(Notification.MediaStyle().setMediaSession())
+            .setPriority(androidx.core.app.NotificationCompat.PRIORITY_HIGH)
+            .setAutoCancel(true)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            notificationBuilder.color = Color.argb(100,185,13, 39)
+        }
+
+        with(NotificationManagerCompat.from(requireContext())){
+            notify(9092,notificationBuilder.build())
+        }
+    }*/
 
 
 }

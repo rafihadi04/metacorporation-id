@@ -29,42 +29,65 @@ class DataRepository {
 
         data.addAll(
             arrayListOf(
+                //CONTOH DATA PER PROGRAM
+                //SUPERBLOOM
                 ProgramModel(
-                    "Program TV 1",
+                    namaProgram = "Superbloom",
                     resource = R.drawable.ic_launcher_background,
                     urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     urlTeaser = "pOWuBM2RNmI",
-                    deskripsiProgram = "lorem ipsun pale pal paleple plepaleplrepalraep sadfasd dsaf asdf sdf sdf dsfas dfali asdf ",
+                    deskripsiProgram = "Penggambaran dari rasa cemas, tenang, dan berani yang merupakan tahapan dari proses terpuruk hingga bangkit sebagai experience dari tema healing dan growth yang akan dibawakan.",
+                    rating= "17+ | Music Show",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Music Show",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla",
                     kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
                         JobdeskModel(
                             "Produser",
-                            arrayListOf(
-                                "Bambang Murdaningrum"
-                            )
+                            namaKru = "Annisa Aulia Rahma",
+                            resourceImage = R.drawable.ic_launcher_background
                         ),
                         JobdeskModel(
-                            "Technical Director",
-                            arrayListOf(
-                                "Tatang Sutatang"
-                            )
+                            "Asisten Produser",
+                            namaKru = "Gustiani Arianti",
+                            resourceImage = R.drawable.ic_launcher_background
                         ),
-                        JobdeskModel(
-                            "Gatau ini apa",
-                            arrayListOf(
-                                "Spiderman",
-                                "Iron Man",
-                                "Kapten amerika"
-                            )
-                        ),
-
                     )
-
                 ),
+                //PROGRAM 2
                 ProgramModel(
-                    "Program TV 2",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/3732667/pexels-photo-3732667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "Superbloom",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Penggambaran dari rasa cemas, tenang, dan berani yang merupakan tahapan dari proses terpuruk hingga bangkit sebagai experience dari tema healing dan growth yang akan dibawakan.",
+                    rating= "17+ | Music Show",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Music Show",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Annisa Aulia Rahma",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Asisten Produser",
+                            namaKru = "Gustiani Arianti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Annisa Aulia Rahma",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
+                //PROGRAM 3
                 ProgramModel(
                     "Program TV 3",
                     R.drawable.ic_launcher_background,
@@ -96,9 +119,29 @@ class DataRepository {
         data.addAll(
             arrayListOf(
                 ProgramModel(
-                    "Program Radio 1",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/929780/pexels-photo-929780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "RADIO 1",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Penggambaran dari rasa cemas, tenang, dan berani yang merupakan tahapan dari proses terpuruk hingga bangkit sebagai experience dari tema healing dan growth yang akan dibawakan.",
+                    rating= "17+ | Music Show",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Music Show",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Annisa Aulia Rahma",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Asisten Produser",
+                            namaKru = "Gustiani Arianti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
                 ProgramModel(
                     "Program Radio 2",

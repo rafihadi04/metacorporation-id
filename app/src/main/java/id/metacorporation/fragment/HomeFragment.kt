@@ -9,6 +9,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
@@ -18,6 +22,7 @@ import id.metacorporation.adapter.BannerAdapter
 import id.metacorporation.R
 import id.metacorporation.adapter.JadwalAdapter
 import id.metacorporation.adapter.NewsAdapter
+import id.metacorporation.adapter.SpinnerAdapter
 import id.metacorporation.enum.TopProgramType
 import id.metacorporation.models.Posts
 import id.metacorporation.models.ProgramModel
@@ -36,6 +41,7 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
     lateinit var newsSlider :SliderView
     lateinit var btStreamTV :MaterialButton
     lateinit var btStreamRadio :MaterialButton
+    private lateinit var spinner :Spinner
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +55,9 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
         slider = viewFragment.findViewById(R.id.banner_program)
         newsSlider = viewFragment.findViewById(R.id.bannerBerita)
 
+        spinner = viewFragment.findViewById(R.id.spinner)
+        setSpinnerList()
+
         @SuppressLint("SourceLockedOrientationActivity")
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
@@ -57,14 +66,14 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
             Log.d(this.javaClass.simpleName,Thread.currentThread().name)
             //
         },"ShowTopProgram").start()*/
-        val programRadio = dataRepository.getTopProgram(TopProgramType.RADIO)
-        val programTv = dataRepository.getTopProgram(TopProgramType.TV)
+        /*val programRadio = dataRepository.getTopProgram(TopProgramType.RADIO)
+        val programTv = dataRepository.getTopProgram(TopProgramType.TV)*/
 
         btStreamTV = viewFragment.findViewById(R.id.btStreamTV)
         btStreamRadio = viewFragment.findViewById(R.id.btStreamRadio)
 
         setButtonListener()
-        showJadwalProgram(programRadio,programTv)
+        //showJadwalProgram(programRadio,programTv)
         showBanner(context, dataRepository.getBanner())
         //showBannerBerita()
         dataRepository.getNews(
@@ -142,6 +151,45 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
             context,
             dataTV
         )
+    }
+
+    private fun setSpinnerList(){
+        spinner.adapter = SpinnerAdapter(
+            requireActivity(),
+            R.layout.spinner_jadwal_layout,
+            arrayListOf(
+                "Senin, 12 Okt 21",
+                "Selaja, 13 Okt 21"
+            )
+        )
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                showJadwalProgram(
+                    ArrayList(dataRepository.getTopProgram(TopProgramType.RADIO).shuffled()),
+                    ArrayList(dataRepository.getTopProgram(TopProgramType.TV).shuffled())
+                )
+                //Toast.makeText(requireContext(),position.toString(),Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?){
+                //Nothing Happens ;)
+            }
+
+        }
+
+        /*SpinnerAdapter(
+            requireContext(),
+            R.layout.spinner_jadwal_layout,
+            arrayListOf(
+                "Senin, 12 Okt 21",
+                "Selaja, 13 Okt 21"
+            )
+        )*/
     }
 
 }

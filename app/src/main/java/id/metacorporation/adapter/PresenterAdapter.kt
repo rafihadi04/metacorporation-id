@@ -14,18 +14,20 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import id.metacorporation.R
 import id.metacorporation.enum.SosmedType
-import id.metacorporation.models.PresenterModel
+import id.metacorporation.models.JobdeskModel
 
 class PresenterAdapter(
     val context: Context?,
-    val presenterList :ArrayList<PresenterModel>,
+    val presenterList :ArrayList<JobdeskModel>,
     ):RecyclerView.Adapter<PresenterAdapter.PresenterAdapterVH>() {
-    inner class PresenterAdapterVH(val itemView: View) :RecyclerView.ViewHolder(itemView){
+    inner class PresenterAdapterVH(itemView: View) :RecyclerView.ViewHolder(itemView){
         internal var imageProfile :ImageView
         internal var namaPresenter :TextView
+        internal var jobdesk :TextView
         init {
             imageProfile = itemView.findViewById(R.id.iv_program)
             namaPresenter = itemView.findViewById(R.id.tv_program)
+            jobdesk = itemView.findViewById(R.id.tv_jobdesk)
         }
     }
 
@@ -38,7 +40,8 @@ class PresenterAdapter(
 
     override fun onBindViewHolder(holder: PresenterAdapterVH, position: Int) {
 
-        holder.namaPresenter.text = presenterList[position].nama
+        holder.namaPresenter.text = presenterList[position].namaKru
+        holder.jobdesk.text = presenterList[position].namaJobdesk
 
         Glide.with(context!!)
             .load(presenterList[position].resourceImage)
@@ -47,9 +50,9 @@ class PresenterAdapter(
             .into(holder.imageProfile)
 
 
-        holder.imageProfile.setOnClickListener{
+        /*holder.imageProfile.setOnClickListener{
             presenterOnClick(position)
-        }
+        }*/
 
         /*if(tipe == ProgramAdapterType.PRESENTER){
             bottomSheetDialog.setContentView(R.layout.deskripsi_layout)
@@ -80,7 +83,7 @@ class PresenterAdapter(
 
         bottomSheetDialog.setContentView(R.layout.deskripsi_layout)
         bottomSheetDialog.findViewById<TextView>(R.id.tv_sosmed_title)!!.text =
-            presenterList[position].jenisSosmed.also {
+            presenterList[position].presenterObj.jenisSosmed.also {
                 when (it) {
                     SosmedType.TWITTER -> context.getString(R.string.twitter)
                     SosmedType.INSTAGRAM -> context.getString(R.string.instagram)
@@ -92,9 +95,9 @@ class PresenterAdapter(
                 }
             }.toString()
         bottomSheetDialog.findViewById<TextView>(R.id.tv_sosmed_deskripsi)!!.text =
-            presenterList[position].deskripsiSosmed
+            presenterList[position].presenterObj.deskripsiSosmed
         bottomSheetDialog.findViewById<TextView>(R.id.tv_sosmed_username)!!.text =
-            presenterList[position].usernameSosmed
+            presenterList[position].presenterObj.usernameSosmed
         bottomSheetDialog.show()
     }
 

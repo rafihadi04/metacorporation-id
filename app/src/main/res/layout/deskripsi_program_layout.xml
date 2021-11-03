@@ -179,11 +179,11 @@
                     android:id="@+id/rvJobdesk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_75sdp"
+
+                    android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/kru_list_layout"
-                    tools:itemCount="3"
+                    tools:listitem="@layout/presenter_layout"
+                    tools:itemCount="5"
                     />
 
 

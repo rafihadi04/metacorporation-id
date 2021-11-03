@@ -10,40 +10,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/swipeRefresh">
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            >
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <FrameLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent">
 
                     <WebView
                         android:id="@+id/webviewNews"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         />
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:id="@+id/webviewLoading"
-                        android:layout_gravity="top"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:indeterminate="false"
-                        app:indicatorColor="@color/pallet_red"
-                        android:background="@color/white"/>
+                </LinearLayout>
 
-                </FrameLayout>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_100sdp"/>
+                    android:layout_height="@dimen/_50sdp" />
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/webviewLoading"
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="false"
+        app:indicatorColor="@color/pallet_red"
+        android:background="@color/white"/>
+
+
 
 
 </FrameLayout>
