@@ -140,10 +140,49 @@
                             android:text="@string/sponsor"
                             android:textColor="@color/pallet_red"
                             android:textSize="@dimen/text_title_size" />
-                        <!--TODO:SPONSOR VIEW-->
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_150sdp" />
+                        <!--TODO:SPONSOR XL-->
+
+                        <!--TODO:SPONSOR BRONZE S-->
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:columnCount="5"
+                            android:useDefaultMargins="true">
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                        </GridLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -160,10 +199,47 @@
                             android:text="@string/media_partner"
                             android:textColor="@color/pallet_red"
                             android:textSize="@dimen/text_title_size" />
-                        <!--TODO:MEDPART VIEW-->
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_150sdp" />
+                        <!--TODO:MEDPART-->
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:columnCount="5"
+                            android:useDefaultMargins="true">
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/ic_launcher_background"/>
+                        </GridLayout>
                     </LinearLayout>
 
                     <com.google.android.material.button.MaterialButton

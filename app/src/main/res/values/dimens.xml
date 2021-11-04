@@ -13,4 +13,5 @@
     <dimen name="tv_body_progam">@dimen/_10sdp</dimen>
     <dimen name="logo_corp_size">@dimen/_25sdp</dimen>
     <dimen name="bottom_nav_bar_radius">@dimen/_15sdp</dimen>
+    <dimen name="bronze_Sponsor">@dimen/_50sdp</dimen>
 </resources>
