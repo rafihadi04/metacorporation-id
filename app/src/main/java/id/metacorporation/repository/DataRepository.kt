@@ -1406,15 +1406,185 @@ class DataRepository {
                 ),
                 //RADIO 7
                 ProgramModel(
-                    "Program Radio 5",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/9807089/pexels-photo-9807089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "Sorot Fakta",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Menguak fakta suatu peristiwa/kasus yang janggal ditengah masyarakat sehingga masyarakat dapat mengetahui kebenaran dibalik suatu peristiwa tersebut. Program Investigasi “Sorot Fakta” juga akan mendatangkan reporter untuk bercerita perjalanannya dalam menyelidiki kasus dan korban dari kejanggalan peristiwa ke studio untuk mendapatkan informasi yang valid.",
+                    rating= "19+ | Investigasi Radio",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Investigasi Radio",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?????",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Irvan Nur Prasetyo",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Program Director",
+                            namaKru = "Alfi Dhamayanti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Ida Setyaningsih",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Reporter",
+                            namaKru = "Salsabila Ivaryagidea Aisya Putri",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Reporter",
+                            namaKru = "Ida Setyaningsih",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Kreatif",
+                            namaKru = "Ferdiansyah Agung Riyadi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Riset",
+                            namaKru = "Printa Fitriana Suriyanto",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Riset",
+                            namaKru = "Salsabila Ivaryagidea Aisya Putri",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "M. Syaiful Hadi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Audio",
+                            namaKru = "Mustafa Kharis Syaiful Yahya",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Visual",
+                            namaKru = "Yahya Nur Fahmi Fauzi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Lighting",
+                            namaKru = "Yonathan Niko Aditama",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
                 //RADIO 8
                 ProgramModel(
-                    "Program Radio 5",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/9807089/pexels-photo-9807089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "Asumsi",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Mengupas isu terkini dari pandangan media \"Meta Radio\" melalui, dialog penyiar bersama pemimpin redaksi yang tentunya berdasarkan fakta dan didukung data serta mencari solusi fakta dan data dari fenomena yang terjadi. Program \"Asumsi\" juga akan membuka interaksi bersama pendengar untuk bisa bersuara terkait topik yang dibahas.",
+                    rating= "18+ | Editorial Radio",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Editorial Radio",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?????",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Septiani Media Sari",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Program Director",
+                            namaKru = "Dio Rahadi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Dian Hastuti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Announcer",
+                            namaKru = "Dian Hastuti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Riset",
+                            namaKru = "Dian Hastuti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Kreatif",
+                            namaKru = "Ferdiansyah",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Floor Director",
+                            namaKru = "Ferdiansyah",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "Dega Azka Riza",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Camera Person",
+                            namaKru = "Dega Azka Riza",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Camera Person",
+                            namaKru = "Bima Triwandha Fianarmada",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Camera Person",
+                            namaKru = "Daffa Siraj Khairullah",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Audio",
+                            namaKru = "Dega Azka Riza",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Audio",
+                            namaKru = "M.Iham Affandi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Lighting",
+                            namaKru = "M.Iham Affandi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor Audio",
+                            namaKru = "Bima Triwandha Fianarmada",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor Visual",
+                            namaKru = "Bima Triwandha Fianarmada",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor",
+                            namaKru = "Rakha Ananta Luvian",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Streamer",
+                            namaKru = "Daffa Siraj Khairullah",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
             )
         )
