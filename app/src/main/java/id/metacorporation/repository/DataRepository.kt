@@ -908,46 +908,264 @@ class DataRepository {
 
         data.addAll(
             arrayListOf(
+                //Radio 1
                 ProgramModel(
-                    namaProgram = "RADIO 1",
+                    namaProgram = "Media (Meta to Pedia)",
                     resource = R.drawable.ic_launcher_background,
                     urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                     urlTeaser = "pOWuBM2RNmI",
-                    deskripsiProgram = "Penggambaran dari rasa cemas, tenang, dan berani yang merupakan tahapan dari proses terpuruk hingga bangkit sebagai experience dari tema healing dan growth yang akan dibawakan.",
-                    rating= "17+ | Music Show",
+                    deskripsiProgram = "MEDIA mengupas berbagai fenomena yang terjadi di dekat kita. Episode kali ini berawal dari kasus mengerikan pada tahun 2020 hingga menjadi tanda tanya besar bagi di masyarakat.",
+                    rating= "18+ | Feature Radio",
                     jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
-                    jenisProgram = "Music Show",
+                    jenisProgram = "Feature Radio",
                     fotoPembawaAcara = R.drawable.ic_launcher_background,
-                    detilPembawaAcara="Coldilac adalah bla bla bla",
+                    detilPembawaAcara="Coldilac adalah bla bla bla?????",
                     kruJobdesk = arrayListOf(
                         //CONTOH DATA JOBDESK
                         JobdeskModel(
                             "Produser",
-                            namaKru = "Annisa Aulia Rahma",
+                            namaKru = "Mafa Zulaikhah",
                             resourceImage = R.drawable.ic_launcher_background
                         ),
                         JobdeskModel(
                             "Asisten Produser",
-                            namaKru = "Gustiani Arianti",
+                            namaKru = "Intan Ramadhani",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Daini Unifianto",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Crative",
+                            namaKru = "Nimas Lutfiani",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Creative",
+                            namaKru = "Farah Aulia",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Coordinator Talent",
+                            namaKru = "Farah Aulia",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Riset",
+                            namaKru = "Abrar Nabil",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "Yohannes Ragil",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor Audio",
+                            namaKru = "Galih Adam",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor Visual",
+                            namaKru = "Andy Wahyu",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Operator Recording",
+                            namaKru = "Chintya Intan",
                             resourceImage = R.drawable.ic_launcher_background
                         ),
                     )
                 ),
+                //Radio 2
                 ProgramModel(
-                    "Program Radio 2",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/9811744/pexels-photo-9811744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "Met Up (Meta Volume Up)",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Mengundang musisi-musisi bertalenta yang akan menampilkan karya orisinil band setiap minggunya. Episode kali ini berkonsep ‘Ruang dan Ekspresi’ yakni berbicara tentang sebuah bagian dari kehidupan (slice of life) bagi seseorang untuk mengekspresikan diri melalui musik.",
+                    rating= "18+ | Music Show Radio",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Music Show Radio",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?????",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Renjani Eka Sulistiyawati",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Assistant Produser",
+                            namaKru = "Gezza Dwivia Eryunara",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Program Director",
+                            namaKru = "Sukma Maya Nurul Izza",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Lintang Larissya",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Floor Director",
+                            namaKru = "Gezza Dwivia Eryunara",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Creative",
+                            namaKru = "Zhaqia Khoerunnisa Jamila",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Coordinator Talent",
+                            namaKru = "Safridayu Firauz Saifana",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Unit Manager",
+                            namaKru = "Arifka Ari Priana",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "Leonardo Andhika",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Operator Mixer",
+                            namaKru = "Leonardo Andhika",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor vMix",
+                            namaKru = "Nurshafina Febriani",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Runner",
+                            namaKru = "Johannes Ragil",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Runner",
+                            namaKru = "Yonathan Niko Aditama",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
+                //Radio 3
                 ProgramModel(
-                    "Program Radio 3",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/9789896/pexels-photo-9789896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "Met Up (Meta Volume Up)",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Mengundang musisi-musisi bertalenta yang akan menampilkan karya orisinil band setiap minggunya. Episode kali ini berkonsep ‘Ruang dan Ekspresi’ yakni berbicara tentang sebuah bagian dari kehidupan (slice of life) bagi seseorang untuk mengekspresikan diri melalui musik.",
+                    rating= "18+ | Music Show Radio",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Music Show Radio",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?????",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Renjani Eka Sulistiyawati",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Assistant Produser",
+                            namaKru = "Gezza Dwivia Eryunara",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Program Director",
+                            namaKru = "Sukma Maya Nurul Izza",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Lintang Larissya",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Floor Director",
+                            namaKru = "Gezza Dwivia Eryunara",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Creative",
+                            namaKru = "Zhaqia Khoerunnisa Jamila",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Coordinator Talent",
+                            namaKru = "Safridayu Firauz Saifana",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Unit Manager",
+                            namaKru = "Arifka Ari Priana",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "Leonardo Andhika",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Operator Mixer",
+                            namaKru = "Leonardo Andhika",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor vMix",
+                            namaKru = "Nurshafina Febriani",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Runner",
+                            namaKru = "Johannes Ragil",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Runner",
+                            namaKru = "Yonathan Niko Aditama",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
+                //RADIO 4
                 ProgramModel(
                     "Program Radio 4",
                     R.drawable.ic_launcher_background,
                     urlBannerImage = "https://images.pexels.com/photos/9816125/pexels-photo-9816125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 ),
+                //RADIO 5
+                ProgramModel(
+                    "Program Radio 5",
+                    R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/9807089/pexels-photo-9807089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                ),
+                //RADIO 6
+                ProgramModel(
+                    "Program Radio 5",
+                    R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/9807089/pexels-photo-9807089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                ),
+                //RADIO 7
+                ProgramModel(
+                    "Program Radio 5",
+                    R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/9807089/pexels-photo-9807089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                ),
+                //RADIO 8
                 ProgramModel(
                     "Program Radio 5",
                     R.drawable.ic_launcher_background,
