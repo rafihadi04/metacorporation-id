@@ -81,7 +81,7 @@ class DataRepository {
                         ),
                         JobdeskModel(
                             "SPV artistik dan Properti",
-                            namaKru = "Muhammad Farhan",
+                            namaKru = "M. Farhan",
                             resourceImage = R.drawable.ic_launcher_background
                         ),
                         JobdeskModel(
@@ -328,7 +328,7 @@ class DataRepository {
                         ),
                         JobdeskModel(
                             "Creative",
-                            namaKru = "Muhammad Athalla Bagas Raya",
+                            namaKru = "M. Athalla Bagas Raya",
                             resourceImage = R.drawable.ic_launcher_background
                         ),
                         JobdeskModel(
@@ -403,12 +403,12 @@ class DataRepository {
                         ),
                         JobdeskModel(
                             "Campers",
-                            namaKru = "Mohammad Al Faiz",
+                            namaKru = "M. Al Faiz",
                             resourceImage = R.drawable.ic_launcher_background
                         ),
                         JobdeskModel(
                             "Campers",
-                            namaKru = "Muhammad Andika Al Ghifari",
+                            namaKru = "M. Andika Al Ghifari",
                             resourceImage = R.drawable.ic_launcher_background
                         ),
                         JobdeskModel(
@@ -453,30 +453,445 @@ class DataRepository {
                         ),
                     )
                 ),
+                //PROGRAM 4
                 ProgramModel(
-                    "Program TV 4",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/4972986/pexels-photo-4972986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "Ruang Rasa",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Perjalanan Maria Tri Sulistyani dan Iwan Effendi menciptakan Papermoon Puppet sebagai wadah mengungkapkan segala pemikirannya. Mengangkat tema yang dekat dengan keseharian, Papermoon Puppet Theatre yakin jika teater ini menjadi jembatan mereka berkomunikasi dengan masyarakat",
+                    rating= "17+ | Dokumenter",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Dokumenter",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Antonius Hegarian",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Assistant Produser",
+                            namaKru = "Kemal Farisi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Sutradara",
+                            namaKru = "Rifky Esa",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Asisten Sutradara",
+                            namaKru = "Nurmalita Kusumastuti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Afra Ghalda Najma",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Art",
+                            namaKru = "Delima",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Creative",
+                            namaKru = "Fahrizal Diktian",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "Rudi Iswanto",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Camera Person",
+                            namaKru = "Rudi Iswanto",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Lighting ",
+                            namaKru = "Helmy Agung K",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Audio",
+                            namaKru = "Alifia Adila H",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor",
+                            namaKru = "Early Sukma S",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Pilot Drone",
+                            namaKru = "Gregorius ayuda W",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
+                //PROGRAM 5
                 ProgramModel(
-                    "Program TV 5",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/6202036/pexels-photo-6202036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "lensa Bulletin",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Menghadirkan berita dengan berbagai format penyajian, live report atau laporan langsung, dan dialog yang berisi informasi secara menyeluruh dari beberapa daerah di Indonesia. Dibagi kedalam tiga segmentasi, yaitu segmen berita umum, dialog, dan rubrik.",
+                    rating= "17+ | News Bulletin",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "News Bulletin",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Koordinator Liputan",
+                            namaKru = "Pramanuhara Oktaline Edisiwi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Belanita Puspita",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Assistant Produser",
+                            namaKru = "Pramanuhara Oktaline Edisiwi",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Program Director",
+                            namaKru = "Annisa Nurul Hamidah",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Floor Director",
+                            namaKru = "Joan Murti Grace",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Presenter Utama",
+                            namaKru = "Anggria Ratri Nugrah Vantiwintan",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Presenter Utama",
+                            namaKru = "Ilham Dika Pradana",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Presenter Rubrik",
+                            namaKru = "Yohanifa Ersha Aulia",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Reporter",
+                            namaKru = "Syafira Puti Kinanti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Creative",
+                            namaKru = "Ariskha Ridhal Ikhrom",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "Lenso Ramadhanovan Parhenda",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Operator Aximmetry",
+                            namaKru = "Lenso Ramadhanovan Parhenda",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Operator vMix",
+                            namaKru = "Ahmad Handoko",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Operator Resolume",
+                            namaKru = "Michael Arjuna Gracia",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Mixer Audio",
+                            namaKru = "Michael Arjuna Gracia",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Support",
+                            namaKru = "Nova Mellysa",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor",
+                            namaKru = "Nova Mellysa",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor",
+                            namaKru = "Ariskha Ridhal Ikhrom",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Live Report",
+                            namaKru = "Lukas Frans Rijnhard",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
+                //PROGRAM 6
                 ProgramModel(
-                    "Program TV 6",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/6202036/pexels-photo-6202036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "Labirin",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Akan mengupas topik yang penting untuk diketahui masyarakat dengan riset dan pembuktian di lapangan. Pada episode kali ini, mengangkat topik mengenai “Ngeri! Godaan Eyelash Extention Ilegal!”. Dalam produksi kali ini, kami ingin mengungkap adanya terapis atau tempat pemasangan eyelash extention yang illegal dan membahayakan konsumen",
+                    rating= "17+ | Investigasi",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Investigasi",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Bayu Asya Isminanda",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Assistant Produser",
+                            namaKru = "Tifany Rizqian Nisa",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Pengarah Acra",
+                            namaKru = "Fathon Nurkrisna Putra",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Presenter",
+                            namaKru = "Shahnaz Dinda Rindiani",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Kreatif",
+                            namaKru = "Ahmad Miftah Kamaluddin",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Reporter/Riset",
+                            namaKru = "Suma Maulidia",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Reporter/Riset",
+                            namaKru = "Yuanvika Aurellia",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Reporter/Riset",
+                            namaKru = "Puri Sasmitha Benning",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Frida Agfiara",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "Sandy Hananda Bakti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Camera Person",
+                            namaKru = "Nova Mellysa B",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Audio",
+                            namaKru = "Lia April S",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Lighting",
+                            namaKru = "Sandy Hananda Bakti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor",
+                            namaKru = "M. Bahrul Ulum",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
+                //PROGRAM 7
                 ProgramModel(
-                    "Program TV 7",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/6202036/pexels-photo-6202036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "ICON (Informative Conversation)",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Akan mengupas topik yang penting untuk diketahui masyarakat dengan riset dan pembuktian di lapangan. Pada episode kali ini, mengangkat topik mengenai “Ngeri! Godaan Eyelash Extention Ilegal!”. Dalam produksi kali ini, kami ingin mengungkap adanya terapis atau tempat pemasangan eyelash extention yang illegal dan membahayakan konsumen",
+                    rating= "17+ | Talkshow",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Talkshow",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Delabela Salsabila Early",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Assistant Produser",
+                            namaKru = "Audisa Luthfiyah",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Pengarah Acra",
+                            namaKru = "Mellinia Pranandari",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Presenter",
+                            namaKru = "Aulia Noor Chairunnisa",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Kreatif",
+                            namaKru = "Nukhfa Farhaturrahma",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Reporter",
+                            namaKru = "Fidya Milleniar",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Riset",
+                            namaKru = "Naura Syifa",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Riset",
+                            namaKru = "Salsabila Laily Tabayuni",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Naura Syifa",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Salsabila Laily Tabayuni",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "M. Thaariq Aziz",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Support",
+                            namaKru = "Vernanda Putra",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor",
+                            namaKru = "Konita Rhamadani Puriningsih",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
+                //PROGRAM 8
                 ProgramModel(
-                    "Program TV 8",
-                    R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/6202036/pexels-photo-6202036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    namaProgram = "Meta News Journal",
+                    resource = R.drawable.ic_launcher_background,
+                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    urlTeaser = "pOWuBM2RNmI",
+                    deskripsiProgram = "Sederet konflik di tanah Papua masih terjadi hingga saat ini, hal ini membuktikan bahwa pendekatan yang dilakukan pemerintah untuk menangani konflik tersebut dinilai masih kurang tepat.",
+                    rating= "17+ | Editorial",
+                    jadwal = "Rabu, 17 Okt 2021 Pukul 16.00 WIB",
+                    jenisProgram = "Editorial",
+                    fotoPembawaAcara = R.drawable.ic_launcher_background,
+                    detilPembawaAcara="Coldilac adalah bla bla bla?",
+                    kruJobdesk = arrayListOf(
+                        //CONTOH DATA JOBDESK
+                        JobdeskModel(
+                            "Produser",
+                            namaKru = "Eka Novia Nurbaiti",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Assistant Produser",
+                            namaKru = "Sholekhah Tifani",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Program director",
+                            namaKru = "Zahrah Jinan Muafa Dzabu\t",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Floor Director",
+                            namaKru = "Joan Murti Grace A.W",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Riset",
+                            namaKru = "Ainun",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Penulis Naskah",
+                            namaKru = "Ainun",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Presenter",
+                            namaKru = "Insan Muhammad",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Creative",
+                            namaKru = "Oktarian Bagus Nugroho",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Technical Director",
+                            namaKru = "Yehezkiel Kristama",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Audio",
+                            namaKru = "Alifia Adila Hutima",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Operator vMix",
+                            namaKru = "Yehezkiel Kristama",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor",
+                            namaKru = "Oktarian Bagus Nugroho",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                        JobdeskModel(
+                            "Editor",
+                            namaKru = "Muzaki Razak",
+                            resourceImage = R.drawable.ic_launcher_background
+                        ),
+                    )
                 ),
             )
         )
