@@ -12,12 +12,12 @@
     <string name="our_program">Our Program</string>
     <string name="presenter">Presenter</string>
     <string name="about_us">About Us</string>
-    <string name="deskripsi_about_us">Lorem ipsum dolor sit amet ini deskripsi program tolong diisi
-        tengkyu ges ahahah mantab jiwa. aing pusing ini mau di iisi apa euy
-        cuhaks aku gatau ini mau di isi apaan. Yoroshikuonengaisimasu!
+    <string name="deskripsi_about_us">\t\t\tMETA memiliki makna Perubahan, yang menjurus ke perubahan sistem dan inovasi yang terjadi saat ini. dimaksudkan penggunaan kata ‘META’ ini dapat memberikan perubahan / perkembangan baik pada zaman saat ini. dari situlah muncul adaptasi untuk industri penyiaran saat ini, serta berkontribusi memberikan program siaran yang bermanfaat bagi masyarakat saat ini.
+        \n\n\t\t\tMeta korporasi yang menaungi tiga departemen akan menjadi sebuah pondasi kuat yang nantinya tetap memberikan perkembangan serta perbaikan pada simulasi tahun ini. Pada simulasi kali ini mengusung tema “Optimis memasuki New Normal” yang dilatarbelakangi oleh kondisi Indonesia yang saat ini sedang dilanda kasus covid-19 yg masih belum selesai.
+        \n\n\t\t\tNama Meta yang bermakna perubahan, semoga bisa memberikan perkembangan atau perbaikan pada zaman menuju tatanan baru nantinya dengan menyajikan program yang inspiratif,edukatif, serta inovatif pada hasil siaran yang diberikan kepada masyarakat.
     </string>
     <string name="contact_us">Contact Us</string>
-    <string name="contact_us_description"><b>Meta Corporation</b>\n<br/>Jalan Magelang KM.6 Sleman Yogyakarta<br/>official@metacorporation.id</string>
+    <string name="contact_us_description"><b>Meta Corporation</b>\n<br/>Jalan Magelang KM.6 Sleman Yogyakarta\n<br/>official@metacorporation.id</string>
     <string name="toast_double_back">Tekan sekali lagi untuk mengeluarkan</string>
     <string name="youtube_live_tv">awWVru0nwMY</string>
     <string name="youtube_live_radio">2cP4sE5l-B8</string>
@@ -44,4 +44,6 @@
     <string name="program_radio">Program Radio</string>
     <string name="live_chat">LIVE CHAT</string>
     <string name="link_news">https://news.metacorporation.id</string>
+    <string name="program_tv_lainnya">PROGRAM TV LAINNYA</string>
+    <string name="program_radio_lainnya">PROGRAM RADIO LAINNYA</string>
 </resources>

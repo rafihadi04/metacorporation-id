@@ -23,7 +23,6 @@ import android.webkit.WebViewClient
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
-import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.widget.NestedScrollView
@@ -405,22 +404,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
     private fun liveChatInit(){
         livechat.loadUrl("https://minnit.chat/iontv?embed")
         livechat.settings.javaScriptEnabled=true
-        livechat.settings.setSupportMultipleWindows(true)
-        livechat.webViewClient=object :WebViewClient(){
-            override fun shouldOverrideUrlLoading(
-                view: WebView?,
-                request: WebResourceRequest?
-            ): Boolean {
-
-                // Use a CustomTabsIntent.Builder to configure CustomTabsIntent.
-                val url = request!!.url
-                val builder = CustomTabsIntent.Builder()
-                val customTabsIntent = builder.build()
-                customTabsIntent.launchUrl(requireContext(), Uri.parse(url.toString()))
-
-                return false
-            }
-        }
+        livechat.webViewClient=WebViewClient()
         livechat.webChromeClient=WebChromeClient()
     }
 

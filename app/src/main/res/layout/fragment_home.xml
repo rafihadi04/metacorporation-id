@@ -186,6 +186,7 @@
                         app:cornerRadius="0dp"/>
 
                     <LinearLayout
+                        android:id="@+id/layoutJadwalTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -212,6 +213,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/layoutJadwalRadio"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"

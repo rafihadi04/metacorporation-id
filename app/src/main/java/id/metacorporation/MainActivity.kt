@@ -2,10 +2,10 @@ package id.metacorporation
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.os.Build
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.content.Intent
+import android.net.Uri
+import android.os.*
+import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
@@ -34,6 +34,16 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val powerManager = getSystemService(POWER_SERVICE) as PowerManager
+        if (!powerManager.isIgnoringBatteryOptimizations(packageName)) {
+            startActivity(
+                Intent(
+                    Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
+                    Uri.parse("package:$packageName")
+                )
+            )
+        }
 
         /*currentPos = savedInstanceState?.getInt("SelectedPosisiton") ?: R.id.home_Fragment*/
 

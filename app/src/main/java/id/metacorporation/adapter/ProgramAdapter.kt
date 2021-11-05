@@ -42,7 +42,7 @@ class ProgramAdapter(
 
     override fun onBindViewHolder(holder: ProgramAdapterVH, position: Int) {
 
-        holder.namaProgram.text = programList[position].namaProgram
+        holder.namaProgram.text = programList[position].namaProgram.split(" (").first()
 
         Glide.with(context!!)
             .load(programList[position].resource)

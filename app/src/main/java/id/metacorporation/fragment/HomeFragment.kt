@@ -9,10 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
@@ -31,6 +28,9 @@ import id.metacorporation.usecase.MainActivityUseCase
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class HomeFragment(val dataRepository: DataRepository) : Fragment() {
@@ -41,6 +41,8 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
     lateinit var newsSlider :SliderView
     lateinit var btStreamTV :MaterialButton
     lateinit var btStreamRadio :MaterialButton
+    lateinit var layoutJadwalTV :LinearLayout
+    lateinit var layoutJadwalRadio :LinearLayout
     private lateinit var spinner :Spinner
 
     override fun onCreateView(
@@ -71,6 +73,9 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
 
         btStreamTV = viewFragment.findViewById(R.id.btStreamTV)
         btStreamRadio = viewFragment.findViewById(R.id.btStreamRadio)
+
+        layoutJadwalTV = viewFragment.findViewById(R.id.layoutJadwalTV)
+        layoutJadwalRadio = viewFragment.findViewById(R.id.layoutJadwalRadio)
 
         setButtonListener()
         //showJadwalProgram(programRadio,programTv)
@@ -141,26 +146,48 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
         slider.startAutoCycle()
     }
 
-    fun showJadwalProgram(dataRadio :ArrayList<ProgramModel>, dataTV :ArrayList<ProgramModel>){
-        rvTopProgramRadio.adapter = JadwalAdapter(
-            context,
-            dataRadio
-        )
+    fun showJadwalProgram(dataTV :ArrayList<ProgramModel>, dataRadio :ArrayList<ProgramModel>){
+        val jadwal = SimpleDateFormat("EEEE, dd MMM yyyy 'Pukul' kk.mm z", Locale("id","ID"))
+        if(dataTV.isNotEmpty()){
+            layoutJadwalTV.visibility=View.VISIBLE
+            rvTopProgramTv.adapter = JadwalAdapter(
+                context,
+                ArrayList(dataTV.sortedWith(compareBy { jadwal.parse(it.jadwal) }))
+            )
+        }else{
+            layoutJadwalTV.visibility=View.GONE
+        }
 
-        rvTopProgramTv.adapter = JadwalAdapter(
-            context,
-            dataTV
-        )
+        if(dataRadio.isNotEmpty()){
+            layoutJadwalRadio.visibility=View.VISIBLE
+            rvTopProgramRadio.adapter = JadwalAdapter(
+                context,
+                ArrayList(dataRadio.sortedWith(compareBy { jadwal.parse(it.jadwal) }))
+            )
+        }else{
+            layoutJadwalRadio.visibility=View.GONE
+        }
+
+        dataRadio.forEach {
+            Log.d("JADWAL", "${it.namaProgram} ${it.jadwal}")
+        }
+        dataTV.forEach {
+            Log.d("JADWAL", "${it.namaProgram} ${it.jadwal}")
+        }
+
     }
 
     private fun setSpinnerList(){
+        val jadwal = arrayListOf(
+            "Senin, 15 Nov 2021",
+            "Selasa, 16 Nov 2021",
+            "Rabu, 17 Nov 2021",
+            "Kamis, 18 Nov 2021"
+        )
         spinner.adapter = SpinnerAdapter(
             requireActivity(),
             R.layout.spinner_jadwal_layout,
-            arrayListOf(
-                "Senin, 12 Okt 21",
-                "Selaja, 13 Okt 21"
-            )
+            jadwal
         )
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -170,8 +197,12 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
                 id: Long
             ) {
                 showJadwalProgram(
-                    ArrayList(dataRepository.getTopProgram(TopProgramType.RADIO).shuffled()),
-                    ArrayList(dataRepository.getTopProgram(TopProgramType.TV).shuffled())
+                    ArrayList(dataRepository.getProgramTv().filter { program ->
+                        program.jadwal.contains(jadwal[position])
+                    }),
+                    ArrayList(dataRepository.getProgramRadio().filter { program ->
+                        program.jadwal.contains(jadwal[position])
+                    })
                 )
                 //Toast.makeText(requireContext(),position.toString(),Toast.LENGTH_SHORT).show()
             }

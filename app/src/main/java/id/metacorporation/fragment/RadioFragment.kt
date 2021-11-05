@@ -13,11 +13,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.activity.OnBackPressedCallback
+import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.RecyclerView
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
@@ -29,6 +33,7 @@ import id.metacorporation.adapter.ProgramAdapter
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
 import id.metacorporation.usecase.MainActivityUseCase
+import org.w3c.dom.Text
 
 class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var rvProgramRadio : RecyclerView
@@ -36,10 +41,12 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var viewFragment: View
     private lateinit var youTubePlayerView : YouTubePlayerView
     private lateinit var navbar: ChipNavigationBar
-    private lateinit var livechat:View
+    private lateinit var livechat: WebView
+    private lateinit var scrollView : NestedScrollView
     private lateinit var livechatTitle : TextView
     private lateinit var logo :ImageView
     private lateinit var toolbar: RelativeLayout
+    private lateinit var textTVRadio :TextView
     private var youtubePlayer :YouTubePlayer? = null
     private var callback: OnBackPressedCallback? = null
 
@@ -51,12 +58,15 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
         viewFragment = inflater.inflate(R.layout.fragment_tv_radio, container, false)
 
         youTubePlayerView = viewFragment.findViewById(R.id.youtubeTv)
+        textTVRadio = viewFragment.findViewById(R.id.textTVRADIO)
+        textTVRadio.text = getString(R.string.program_radio_lainnya)
 
         rvProgramRadio = viewFragment.findViewById(R.id.rv_our_programtv)
         //rvPresenterRadio = viewFragment.findViewById(R.id.rv_presenter_radio)
 
-        livechat = viewFragment.findViewById(R.id.liveChatLayout)
+        livechat = viewFragment.findViewById(R.id.livechatWebview)
         livechatTitle = viewFragment.findViewById(R.id.liveChatButton)
+        scrollView = viewFragment.findViewById(R.id.scrollViewTvRadio)
 
         navbar = requireActivity().findViewById(R.id.bottomNav)
         navbar.visibility = savedInstanceState?.getInt("NavBar") ?: View.VISIBLE
@@ -76,6 +86,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
             setyoutubeLink(getString(R.string.youtube_live_radio))
         }
         showProgram(dataRepository.getProgramRadio()/*, dataRepository.getAnnouncer()*/)
+        liveChatInit()
 
         return viewFragment
     }
@@ -87,6 +98,10 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
             }else{
                 livechat.visibility=View.GONE
             }
+        }
+        livechat.setOnTouchListener { v, event ->
+            scrollView.requestDisallowInterceptTouchEvent(true)
+            false
         }
     }
 
@@ -281,6 +296,15 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
         }else if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
             youTubePlayerView.exitFullScreen()
         }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun liveChatInit(){
+        livechat.loadUrl("https://minnit.chat/iontv?embed")
+        livechat.settings.javaScriptEnabled=true
+        livechat.settings.setSupportMultipleWindows(true)
+        livechat.webViewClient= WebViewClient()
+        livechat.webChromeClient= WebChromeClient()
     }
 
 
