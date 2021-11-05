@@ -211,132 +211,106 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:columnCount="5"
                             android:useDefaultMargins="true">
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_gold_xl_bem" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_gold_xl_crastfm" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_gold_xl_familavoice" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_gold_xl_fastfm" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_gold_xl_fomstmm" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_gold_xl_mdcstmm" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_gold_xl_unytechtv" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_akindotv" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_jbradio" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_jogjafamiliyradio" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_kommikstmm" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_raigedhek" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_swaragama" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_usbfstmm" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_volleyballmmtc" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_silver_l_wargagigs" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_gradiosta" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_istakalisa" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_jogjainfoku" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_jogjapunyaacara" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_magenta" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_mmtcbasketball" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_mmtcradio" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_mnctrijayafm" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
                                 android:src="@drawable/medpart_bronze_m_mqfm" />
-
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
