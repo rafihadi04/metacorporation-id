@@ -15,8 +15,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import androidx.recyclerview.widget.RecyclerView
 import id.metacorporation.MainActivity
 import id.metacorporation.R
+import id.metacorporation.adapter.SponsorMedpartAdapter
 import id.metacorporation.enum.NotificationID
 import id.metacorporation.usecase.MainActivityUseCase
 import id.metacorporation.utils.ProgramNotificationReceiver
@@ -28,6 +30,8 @@ class AboutFragment : Fragment() {
     private lateinit var ivTiktok: ImageView
     private lateinit var ivTwitter: ImageView
     private lateinit var ivLinkedin: ImageView
+    private lateinit var rvSponsor: RecyclerView
+    private lateinit var rvMedpart: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,8 +48,8 @@ class AboutFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val intent = Intent(requireContext(),MainActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(requireContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT)
+        /*val intent = Intent(requireContext(),MainActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(requireContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT)*/
 
         /*view.findViewById<Button>(R.id.bt_sponsor).setOnClickListener{
             //showNotification("Sponsor", "sponsor bla bla bla desc")
@@ -65,7 +69,10 @@ class AboutFragment : Fragment() {
         ivLinkedin = view.findViewById(R.id.iv_linkedin)
         ivTiktok = view.findViewById(R.id.iv_tiktok)
         ivTwitter = view.findViewById(R.id.iv_twitter)
+        rvSponsor = view.findViewById(R.id.rvSponsor)
+        rvMedpart = view.findViewById(R.id.rvMedpart)
         setImageListener()
+        sponsor()
     }
 
     private fun setImageListener() {
@@ -95,6 +102,54 @@ class AboutFragment : Fragment() {
         @SuppressLint("SourceLockedOrientationActivity")
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         (requireActivity() as MainActivityUseCase).whiteNavBar()
+    }
+
+    private fun sponsor(){
+        rvSponsor.adapter=SponsorMedpartAdapter(requireContext(), arrayListOf(
+            R.drawable.sponsor_audiogood,
+            R.drawable.sponsor_koi5,
+            R.drawable.sponsor_kotakht,
+            R.drawable.sponsor_lensajogja,
+            R.drawable.sponsor_logonafigrass,
+            R.drawable.sponsor_logoplant,
+            R.drawable.sponsor_sumberabadifurniture,
+            R.drawable.sponsor_thegrandcabinhotel,
+            R.drawable.sponsor_wavoice
+        ))
+        rvMedpart.adapter=SponsorMedpartAdapter(requireContext(), arrayListOf(
+            R.drawable.medpart_gold_xl_bem,
+            R.drawable.medpart_gold_xl_crastfm,
+            R.drawable.medpart_gold_xl_familavoice,
+            R.drawable.medpart_gold_xl_fastfm,
+            R.drawable.medpart_gold_xl_fomstmm,
+            R.drawable.medpart_gold_xl_mdcstmm,
+            R.drawable.medpart_gold_xl_unytechtv,
+            R.drawable.medpart_silver_l_akindotv,
+            R.drawable.medpart_silver_l_jbradio,
+            R.drawable.medpart_silver_l_jogjafamiliyradio,
+            R.drawable.medpart_silver_l_kommikstmm,
+            R.drawable.medpart_silver_l_raigedhek,
+            R.drawable.medpart_silver_l_swaragama,
+            R.drawable.medpart_silver_l_usbfstmm,
+            R.drawable.medpart_silver_l_volleyballmmtc,
+            R.drawable.medpart_silver_l_wargagigs,
+            R.drawable.medpart_bronze_m_gradiosta,
+            R.drawable.medpart_bronze_m_istakalisa,
+            R.drawable.medpart_bronze_m_jogjainfoku,
+            R.drawable.medpart_bronze_m_jogjapunyaacara,
+            R.drawable.medpart_bronze_m_magenta,
+            R.drawable.medpart_bronze_m_mmtcbasketball,
+            R.drawable.medpart_bronze_m_mmtcradio,
+            R.drawable.medpart_bronze_m_mnctrijayafm,
+            R.drawable.medpart_bronze_m_mqfm,
+            R.drawable.medpart_bronze_m_pamityang2an_black,
+            R.drawable.medpart_bronze_m_pmkk,
+            R.drawable.medpart_bronze_m_rasida,
+            R.drawable.medpart_bronze_m_retjobuntung,
+            R.drawable.medpart_bronze_m_rockstarmagz_bgwhite,
+            R.drawable.medpart_bronze_m_sakafm,
+            R.drawable.medpart_allyoucanart,
+        ))
     }
     /*fun showNotification(title:String,contentText:String, icon:Int=R.drawable.ic_tv){
         Log.d("Notification","show $title, $contentText")
