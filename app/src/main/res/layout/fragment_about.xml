@@ -153,35 +153,39 @@
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
-                                android:src="@drawable/ic_launcher_background"/>
+                                android:src="@drawable/sponsor_audiogood"/>
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
-                                android:src="@drawable/ic_launcher_background"/>
+                                android:src="@drawable/sponsor_koi5"/>
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
-                                android:src="@drawable/ic_launcher_background"/>
+                                android:src="@drawable/sponsor_kotakht"/>
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
-                                android:src="@drawable/ic_launcher_background"/>
+                                android:src="@drawable/sponsor_lensajogja"/>
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
-                                android:src="@drawable/ic_launcher_background"/>
+                                android:src="@drawable/sponsor_logonafigrass"/>
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
-                                android:src="@drawable/ic_launcher_background"/>
+                                android:src="@drawable/sponsor_logoplant"/>
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
-                                android:src="@drawable/ic_launcher_background"/>
+                                android:src="@drawable/sponsor_sumberabadifurniture"/>
                             <ImageView
                                 android:layout_width="@dimen/bronze_Sponsor"
                                 android:layout_height="@dimen/bronze_Sponsor"
-                                android:src="@drawable/ic_launcher_background"/>
+                                android:src="@drawable/sponsor_thegrandcabinhotel"/>
+                            <ImageView
+                                android:layout_width="@dimen/bronze_Sponsor"
+                                android:layout_height="@dimen/bronze_Sponsor"
+                                android:src="@drawable/sponsor_wavoice"/>
                         </GridLayout>
                     </LinearLayout>
 
