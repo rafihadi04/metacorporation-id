@@ -3,6 +3,7 @@ package id.metacorporation
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.Uri
 import android.os.*
 import android.provider.Settings
@@ -18,6 +19,7 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import id.metacorporation.fragment.*
 import id.metacorporation.repository.DataRepository
 import id.metacorporation.usecase.MainActivityUseCase
+import id.metacorporation.utils.StartupReceiver
 
 class MainActivity : AppCompatActivity(),MainActivityUseCase {
 
@@ -53,6 +55,8 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
         createNotificationChannel()
         bottomNav = findViewById(R.id.bottomNav)
         bottomNavInit()
+
+        setNotifReceiver()
 
 
     }
@@ -212,6 +216,17 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
 
     override fun onError(msg: String) {
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+    }
+
+    fun setNotifReceiver(){
+        val BROADCAST = "id.metacorporation.action.notifikasi"
+        val intentFilter = IntentFilter(BROADCAST)
+
+        val receiver =  StartupReceiver()
+        registerReceiver(receiver,intentFilter)
+
+        val newIntent = Intent(BROADCAST)
+        sendBroadcast(newIntent)
     }
 
 

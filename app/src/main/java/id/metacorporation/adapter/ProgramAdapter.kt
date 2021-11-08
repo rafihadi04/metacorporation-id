@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
@@ -99,26 +100,28 @@ class ProgramAdapter(
                     }
                 })
             }
-            programList[position].urlBannerImage.isNotEmpty() -> {
+            else -> {
                 ytView!!.visibility=View.GONE
                 imageView!!.visibility=View.VISIBLE
                 Glide.with(context)
-                    .load(programList[position].urlBannerImage)
+                    .load(programList[position].urlBannerImage?:programList[position].resourceBanner)
                     .centerCrop()
                     .diskCacheStrategy( DiskCacheStrategy.ALL )
                     .into(imageView)
             }
-            programList[position].resource!=0 -> {
+            /*programList[position].resource!=0 -> {
                 ytView!!.visibility=View.GONE
                 imageView!!.visibility=View.VISIBLE
                 Glide.with(context)
-                    .load(programList[position].resource)
+                    .load(programList[position].resourceBanner)
                     .centerCrop()
                     .diskCacheStrategy( DiskCacheStrategy.ALL )
                     .into(imageView)
-            }
+            }*/
         }
         bottomSheetDialog.show()
+        bottomSheetDialog.behavior.state= BottomSheetBehavior.STATE_EXPANDED
+        bottomSheetDialog.behavior.isFitToContents=true
     }
 
     override fun getItemCount(): Int {

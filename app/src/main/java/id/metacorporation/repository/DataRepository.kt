@@ -33,9 +33,8 @@ class DataRepository {
                 //SUPERBLOOM
                 ProgramModel(
                     namaProgram = "Superbloom",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.superbloom,
+                    resourceBanner = R.drawable.superbloom___landscape,
                     deskripsiProgram = "Penggambaran dari rasa cemas, tenang, dan berani yang merupakan tahapan dari proses terpuruk hingga bangkit sebagai experience dari tema healing dan growth yang akan dibawakan.",
                     rating= "17+ | Music Show",
                     jadwal = "Kamis, 18 Nov 2021 Pukul 14.15 WIB",
@@ -209,9 +208,10 @@ class DataRepository {
                 //PROGRAM 2
                 ProgramModel(
                     namaProgram = "Metamore Movie",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.metamore_movie,
+                    resourceBanner = R.drawable.metamore_movie___landscape,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Vanka telah menyelesaikan studinya, memutuskan untuk pergi dari lingkungan yang membuatnya tertekan selama ini. Krisis jati diri dan trauma masa kecil yang ia rasakan, menjadi alasannya untuk memulai hidup baru dengan identitas baru.",
                     rating= "17+ | Drama TV",
                     jadwal = "Rabu, 17 Nov 2021 Pukul 13.45 WIB",
@@ -290,9 +290,10 @@ class DataRepository {
                 //PROGRAM 3
                 ProgramModel(
                     namaProgram = "Galleria",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.galleria,
+                    resourceBanner = R.drawable.galleria___landscape,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Galleria adalah program televisi yang memberikan hiburan dan informasi dikemas dengan fun, santai dengan gaya yang up to date.",
                     rating= "17+ | Variety Show",
                     jadwal = "Rabu, 17 Nov 2021 Pukul 14.30 WIB",
@@ -456,9 +457,10 @@ class DataRepository {
                 //PROGRAM 4
                 ProgramModel(
                     namaProgram = "Ruang Rasa",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.ruang_rasa,
+                    resourceBanner = R.drawable.ruang_rasa___landscape,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Perjalanan Maria Tri Sulistyani dan Iwan Effendi menciptakan Papermoon Puppet sebagai wadah mengungkapkan segala pemikirannya. Mengangkat tema yang dekat dengan keseharian, Papermoon Puppet Theatre yakin jika teater ini menjadi jembatan mereka berkomunikasi dengan masyarakat",
                     rating= "17+ | Dokumenter",
                     jadwal = "Kamis, 18 Nov 2021 Pukul 13.30 WIB",
@@ -537,9 +539,10 @@ class DataRepository {
                 //PROGRAM 5
                 ProgramModel(
                     namaProgram = "Lensa Bulletin",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.lensa_bulletin,
+                    resourceBanner = R.drawable.lensa_bulletin___landscape,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Menghadirkan berita dengan berbagai format penyajian, live report atau laporan langsung, dan dialog yang berisi informasi secara menyeluruh dari beberapa daerah di Indonesia. Dibagi kedalam tiga segmentasi, yaitu segmen berita umum, dialog, dan rubrik.",
                     rating= "17+ | News Bulletin",
                     jadwal = "Rabu, 17 Nov 2021 Pukul 13.00 WIB",
@@ -648,9 +651,10 @@ class DataRepository {
                 //PROGRAM 6
                 ProgramModel(
                     namaProgram = "Labirin",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.labirin,
+                    resourceBanner = R.drawable.labirin___landscape,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Akan mengupas topik yang penting untuk diketahui masyarakat dengan riset dan pembuktian di lapangan. Pada episode kali ini, mengangkat topik mengenai “Ngeri! Godaan Eyelash Extention Ilegal!”. Dalam produksi kali ini, kami ingin mengungkap adanya terapis atau tempat pemasangan eyelash extention yang illegal dan membahayakan konsumen",
                     rating= "17+ | Investigasi",
                     jadwal = "Rabu, 17 Nov 2021 Pukul 14.00 WIB",
@@ -734,9 +738,10 @@ class DataRepository {
                 //PROGRAM 7
                 ProgramModel(
                     namaProgram = "ICON (Informative Conversation)",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.icon,
+                    resourceBanner = R.drawable.icon___landscape,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Akan mengupas topik yang penting untuk diketahui masyarakat dengan riset dan pembuktian di lapangan. Pada episode kali ini, mengangkat topik mengenai “Ngeri! Godaan Eyelash Extention Ilegal!”. Dalam produksi kali ini, kami ingin mengungkap adanya terapis atau tempat pemasangan eyelash extention yang illegal dan membahayakan konsumen",
                     rating= "17+ | Talkshow",
                     jadwal = "Kamis, 18 Nov 2021 Pukul 13.45 WIB",
@@ -815,9 +820,10 @@ class DataRepository {
                 //PROGRAM 8
                 ProgramModel(
                     namaProgram = "Meta News Journal",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.meta_news_journal,
+                    resourceBanner = R.drawable.meta_news_journal___landscape,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Sederet konflik di tanah Papua masih terjadi hingga saat ini, hal ini membuktikan bahwa pendekatan yang dilakukan pemerintah untuk menangani konflik tersebut dinilai masih kurang tepat.",
                     rating= "17+ | Editorial",
                     jadwal = "Kamis, 18 Nov 2021 Pukul 13.00 WIB",
@@ -917,9 +923,10 @@ class DataRepository {
                 //Radio 1
                 ProgramModel(
                     namaProgram = "Media (Meta to Pedia)",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.media,
+                    resourceBanner = R.drawable.media___landcape_copy,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "MEDIA mengupas berbagai fenomena yang terjadi di dekat kita. Episode kali ini berawal dari kasus mengerikan pada tahun 2020 hingga menjadi tanda tanya besar bagi di masyarakat.",
                     rating= "18+ | Feature Radio",
                     jadwal = "Senin, 15 Nov 2021 Pukul 12.50 WIB",
@@ -988,9 +995,10 @@ class DataRepository {
                 //Radio 2
                 ProgramModel(
                     namaProgram = "Met Up (Meta Volume Up)",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.met_up,
+                    resourceBanner = R.drawable.met_up___landscape_copy,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Mengundang musisi-musisi bertalenta yang akan menampilkan karya orisinil band setiap minggunya. Episode kali ini berkonsep ‘Ruang dan Ekspresi’ yakni berbicara tentang sebuah bagian dari kehidupan (slice of life) bagi seseorang untuk mengekspresikan diri melalui musik.",
                     rating= "17+ | Music Show Radio",
                     jadwal = "Selasa, 16 Nov 2021 Pukul 13.30 WIB",
@@ -1069,9 +1077,10 @@ class DataRepository {
                 //Radio 3
                 ProgramModel(
                     namaProgram = "Soulmet (Sound of Love Meta Radio)",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.soulmet,
+                    resourceBanner = R.drawable.soulmet___landscape_copy,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Program mengangkat tema percintaan ini disiarkan untuk menghibur pendengar dengan berbagai konsep yang disajikan. Serta menyampaikan informasi dan sharing santai yang dikemas singkat, ringkas dan menarik, yang akan dipandu oleh dua orang penyiar, dengan pembawaan ceria, menyenangkan dan bisa menghibur pendengar.",
                     rating= "17+ | Variety Show Radio",
                     jadwal = "Senin, 15 Nov 2021 Pukul 13.10 WIB",
@@ -1160,9 +1169,10 @@ class DataRepository {
                 //RADIO 4
                 ProgramModel(
                     namaProgram = "Madam Meta",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.madam_meta,
+                    resourceBanner = R.drawable.madam_meta___landscape_copy,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Menceritakan seorang gadis remaja 20 tahunan, bernama Zefa. Zefa terkenal dengan keceriaan dan keseruannya sehingga membuat Doni selalu merasa nyaman di dekatnya. Hingga suatu hari, keadaan membuat Zefa tidak bisa menceritakan keadaan pada Doni, hal itu sangat mengejutkan Doni dan membuat dirinya merasa gagal menjadi seorang teman.",
                     rating= "18+ | Drama Radio",
                     jadwal = "Selasa, 16 Nov 2021 Pukul 12.50 WIB",
@@ -1231,9 +1241,10 @@ class DataRepository {
                 //RADIO 5
                 ProgramModel(
                     namaProgram = "Prime News",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.prime_news,
+                    resourceBanner = R.drawable.prime_news___landscape_copy,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Merupakan program Buletin Berita yang berisi informasi maupun fenomena aktual, faktual dan terpercaya yang ada di Indonesia dan Manca Negara.Di Dalam Program \"Prime News\" ini terdiri dari Prime Sport dan Prime Update",
                     rating= "18+ | News Bulletin Radio",
                     jadwal = "Senin, 15 Nov 2021 Pukul 12.00 WIB",
@@ -1327,9 +1338,10 @@ class DataRepository {
                 //RADIO 6
                 ProgramModel(
                     namaProgram = "BIAS (Bicara Apa Saja)",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.bias,
+                    resourceBanner = R.drawable.bias___landscape_copy,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Dialog yang mengulas berbagai sisi dari peristiwa yang sedang ramai diperbincangkan publik bersama narasumber dan kolaborasi bersama sederet media radio serta tak lupa interaksi bersama pendengar. \"dari Bias jadi Jelas\", menjadi goals dari Program \"Bias\"",
                     rating= "18+ | Talkshow Radio",
                     jadwal = "Selasa, 16 Nov 2021 Pukul 12.00 WIB",
@@ -1413,9 +1425,10 @@ class DataRepository {
                 //RADIO 7
                 ProgramModel(
                     namaProgram = "Sorot Fakta",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.sorot_fakta,
+                    resourceBanner = R.drawable.sorot_fakta___landscape_copy,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Menguak fakta suatu peristiwa/kasus yang janggal ditengah masyarakat sehingga masyarakat dapat mengetahui kebenaran dibalik suatu peristiwa tersebut. Program Investigasi “Sorot Fakta” juga akan mendatangkan reporter untuk bercerita perjalanannya dalam menyelidiki kasus dan korban dari kejanggalan peristiwa ke studio untuk mendapatkan informasi yang valid.",
                     rating= "19+ | Investigasi Radio",
                     jadwal = "Senin, 15 Nov 2021 Pukul 12.35 WIB",
@@ -1489,9 +1502,10 @@ class DataRepository {
                 //RADIO 8
                 ProgramModel(
                     namaProgram = "Asumsi",
-                    resource = R.drawable.ic_launcher_background,
-                    urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                    urlTeaser = "pOWuBM2RNmI",
+                    resource = R.drawable.asumsi,
+                    resourceBanner = R.drawable.asumsi___landscape_polos_copy,
+                    //urlBannerImage = "https://images.pexels.com/photos/7078048/pexels-photo-7078048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                    //urlTeaser = "pOWuBM2RNmI",
                     deskripsiProgram = "Mengupas isu terkini dari pandangan media \"Meta Radio\" melalui, dialog penyiar bersama pemimpin redaksi yang tentunya berdasarkan fakta dan didukung data serta mencari solusi fakta dan data dari fenomena yang terjadi. Program \"Asumsi\" juga akan membuka interaksi bersama pendengar untuk bisa bersuara terkait topik yang dibahas.",
                     rating= "18+ | Editorial Radio",
                     jadwal = "Selasa, 16 Nov 2021 Pukul 13.10 WIB",
@@ -1681,7 +1695,7 @@ class DataRepository {
 
     fun getBanner() :ArrayList<ProgramModel>{
 
-        val data = arrayListOf<ProgramModel>()
+        /*val data = arrayListOf<ProgramModel>()
 
         val featuredProgramRadio = listOf(2,1,3)
         val featuredProgramTV = listOf(0,1,3)
@@ -1692,7 +1706,9 @@ class DataRepository {
 
         getProgramTv().withIndex().forEach {
             if(featuredProgramTV.contains(it.index)) data.add(it.value)
-        }
+        }*/
+
+        val data = ArrayList(getProgramRadio() + getProgramTv())
 
         data.shuffle()
 

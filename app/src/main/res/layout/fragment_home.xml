@@ -54,28 +54,32 @@
                 <id.metacorporation.utils.NestedScrollableHost
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
-                    <com.smarteist.autoimageslider.SliderView
-                        android:id="@+id/banner_program"
+                    <id.metacorporation.utils.SixTeenByNineFrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        app:sliderAnimationDuration="600"
-                        app:sliderAutoCycleDirection="back_and_forth"
-                        app:sliderAutoCycleEnabled="true"
-                        app:sliderIndicatorAnimationDuration="600"
-                        app:sliderIndicatorGravity="center_horizontal|bottom"
-                        app:sliderIndicatorMargin="15dp"
-                        app:sliderIndicatorOrientation="horizontal"
-                        app:sliderIndicatorPadding="3dp"
-                        app:sliderIndicatorRadius="2dp"
-                        app:sliderIndicatorSelectedColor="@color/pallet_red"
-                        app:sliderIndicatorUnselectedColor="@color/pallet_white"
-                        app:sliderScrollTimeInSec="1"
-                        app:sliderStartAutoCycle="true"
-                        android:scrollbarAlwaysDrawHorizontalTrack="true"
-                        android:nestedScrollingEnabled="false"
-                        android:overScrollMode="always"
-                        />
+                        android:layout_height="wrap_content">
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/banner_program"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:sliderAnimationDuration="600"
+                            app:sliderAutoCycleDirection="back_and_forth"
+                            app:sliderAutoCycleEnabled="true"
+                            app:sliderIndicatorAnimationDuration="600"
+                            app:sliderIndicatorGravity="center_horizontal|bottom"
+                            app:sliderIndicatorMargin="15dp"
+                            app:sliderIndicatorOrientation="horizontal"
+                            app:sliderIndicatorPadding="3dp"
+                            app:sliderIndicatorRadius="2dp"
+                            app:sliderIndicatorSelectedColor="@color/pallet_red"
+                            app:sliderIndicatorUnselectedColor="@color/pallet_white"
+                            app:sliderScrollTimeInSec="1"
+                            app:sliderStartAutoCycle="true"
+                            android:scrollbarAlwaysDrawHorizontalTrack="true"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="always"
+                            />
+                    </id.metacorporation.utils.SixTeenByNineFrameLayout>
 
                 </id.metacorporation.utils.NestedScrollableHost>
 

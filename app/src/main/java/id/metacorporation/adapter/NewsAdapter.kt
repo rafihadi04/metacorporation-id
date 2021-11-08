@@ -12,6 +12,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.smarteist.autoimageslider.SliderViewAdapter
 import id.metacorporation.R
 import id.metacorporation.models.Posts
+import org.apache.commons.text.StringEscapeUtils
 
 class NewsAdapter(val context: Context, private val posts:ArrayList<Posts>): SliderViewAdapter<NewsAdapter.VH>() {
     class VH(itemView: View) : SliderViewAdapter.ViewHolder(itemView) {
@@ -35,6 +36,6 @@ class NewsAdapter(val context: Context, private val posts:ArrayList<Posts>): Sli
             .centerCrop()
             .diskCacheStrategy( DiskCacheStrategy.ALL )
             .into(viewHolder.image)
-        viewHolder.text.text = posts[position].title.rendered
+        viewHolder.text.text = StringEscapeUtils.unescapeHtml4(posts[position].title.rendered)
     }
 }

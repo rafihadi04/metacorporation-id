@@ -22,7 +22,7 @@ import java.util.*
 class StartupReceiver:BroadcastReceiver() {
     private var requestCode: Int = 0
     override fun onReceive(context: Context, intent: Intent) {
-        if(intent.action.equals(Intent.ACTION_BOOT_COMPLETED)){
+        if(intent.action.equals(Intent.ACTION_BOOT_COMPLETED) or intent.action.equals("id.metacorporation.action.notifikasi")){
             Log.d(this.javaClass.simpleName, "onReceive()")
             showNotification(context)
             setUpAlarm(context)
