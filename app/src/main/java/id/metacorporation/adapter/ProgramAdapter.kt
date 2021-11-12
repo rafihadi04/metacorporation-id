@@ -48,7 +48,6 @@ class ProgramAdapter(
         Glide.with(context!!)
             .load(programList[position].resource)
             .centerCrop()
-            .diskCacheStrategy( DiskCacheStrategy.ALL )
             .into(holder.imageProgram)
 
         holder.imageProgram.setOnClickListener{
@@ -71,13 +70,17 @@ class ProgramAdapter(
             programList[position].rating
         bottomSheetDialog.findViewById<TextView>(R.id.detilJenisProgram)!!.text =
             programList[position].jenisProgram
-        bottomSheetDialog.findViewById<TextView>(R.id.detilPembawaAcara)!!.text =
+                /*.split(" Radio")
+                .first()*/
+                .uppercase()
+        /*bottomSheetDialog.findViewById<TextView>(R.id.detilPembawaAcara)!!.text =
             programList[position].detilPembawaAcara.uppercase()
 
         Glide.with(context)
             .load(programList[position].fotoPembawaAcara)
             .diskCacheStrategy( DiskCacheStrategy.ALL )
-            .into(bottomSheetDialog.findViewById<ImageView>(R.id.ivPembawaAcara)!!)
+            .centerCrop()
+            .into(bottomSheetDialog.findViewById(R.id.ivPembawaAcara)!!)*/
 
         //val lyt = bottomSheetDialog.findViewById<LinearLayout>(R.id.layoutDetilProgram)
         //bottomSheetDialog.behavior.peekHeight = 100
@@ -85,18 +88,33 @@ class ProgramAdapter(
         val ytView = bottomSheetDialog.findViewById<YouTubePlayerView>(R.id.youtubeView)
         val imageView = bottomSheetDialog.findViewById<ImageView>(R.id.bannerProgram)
         val rvKru = bottomSheetDialog.findViewById<RecyclerView>(R.id.rvJobdesk)
+        val rvPengisiAcara = bottomSheetDialog.findViewById<RecyclerView>(R.id.rvPengisiAcara)
         rvKru?.adapter = PresenterAdapter(
             context,
             programList[position].kruJobdesk
         )
+        rvPengisiAcara?.adapter = PresenterAdapter(
+            context,
+            programList[position].pengisiAcara
+        )
+
+        if (programList[position].pengisiAcara.isNotEmpty()){
+            val rvPengisiAcara = bottomSheetDialog.findViewById<RecyclerView>(R.id.rvPengisiAcara)
+            rvPengisiAcara?.adapter = PresenterAdapter(
+                context,
+                programList[position].pengisiAcara
+            )
+        }else{
+            bottomSheetDialog.findViewById<LinearLayout>(R.id.layoutPengisiAcara)?.visibility=View.GONE
+        }
         when {
-            programList[position].urlTeaser.isNotEmpty() -> {
+            !programList[position].urlTeaser.isNullOrBlank() -> {
                 imageView!!.visibility=View.GONE
                 ytView!!.visibility=View.VISIBLE
                 ytView.initialize(object : AbstractYouTubePlayerListener(){
                     override fun onReady(youTubePlayer: YouTubePlayer) {
                         super.onReady(youTubePlayer)
-                        youTubePlayer.cueVideo(programList[position].urlTeaser,0F)
+                        youTubePlayer.cueVideo(programList[position].urlTeaser!!,0F)
                     }
                 })
             }

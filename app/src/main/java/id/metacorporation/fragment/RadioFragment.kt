@@ -19,7 +19,6 @@ import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toolbar
 import androidx.activity.OnBackPressedCallback
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.RecyclerView
@@ -33,9 +32,8 @@ import id.metacorporation.adapter.ProgramAdapter
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
 import id.metacorporation.usecase.MainActivityUseCase
-import org.w3c.dom.Text
 
-class RadioFragment(val dataRepository: DataRepository) : Fragment() {
+class RadioFragment(private val dataRepository: DataRepository) : Fragment() {
     private lateinit var rvProgramRadio : RecyclerView
     //private lateinit var rvPresenterRadio : RecyclerView
     private lateinit var viewFragment: View
@@ -44,6 +42,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var livechat: WebView
     private lateinit var scrollView : NestedScrollView
     private lateinit var livechatTitle : TextView
+    private lateinit var namaProgramTvOnAir:TextView
     private lateinit var logo :ImageView
     private lateinit var toolbar: RelativeLayout
     private lateinit var textTVRadio :TextView
@@ -67,6 +66,8 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
         livechat = viewFragment.findViewById(R.id.livechatWebview)
         livechatTitle = viewFragment.findViewById(R.id.liveChatButton)
         scrollView = viewFragment.findViewById(R.id.scrollViewTvRadio)
+        namaProgramTvOnAir =viewFragment.findViewById(R.id.namaProgramTvOnAir)
+        namaProgramTvOnAir.text = getString(R.string.meta_radio_live_name)
 
         navbar = requireActivity().findViewById(R.id.bottomNav)
         navbar.visibility = savedInstanceState?.getInt("NavBar") ?: View.VISIBLE
@@ -83,7 +84,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
                 .into(logo)*/
             logo.setImageResource(R.drawable.meta_radio_colored_white)
             setLiveChatListener()
-            setyoutubeLink(getString(R.string.youtube_live_radio))
+            setyoutubeLink(dataRepository.getLinkRadio())
         }
         showProgram(dataRepository.getProgramRadio()/*, dataRepository.getAnnouncer()*/)
         liveChatInit()
@@ -91,6 +92,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
         return viewFragment
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setLiveChatListener() {
         livechatTitle.setOnClickListener {
             if(livechat.visibility==View.GONE){
@@ -99,7 +101,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
                 livechat.visibility=View.GONE
             }
         }
-        livechat.setOnTouchListener { v, event ->
+        livechat.setOnTouchListener { _, _ ->
             scrollView.requestDisallowInterceptTouchEvent(true)
             false
         }
@@ -137,7 +139,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     /**
      * Fungsi untuk menyiapkan layout Youtube
      * */
-    fun setyoutubeLink(url :String){
+    private fun setyoutubeLink(url :String){
         lifecycle.addObserver(youTubePlayerView)
 
         setYoutubeListener(url)
@@ -253,7 +255,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
     /**
      * Fungsi untuk menghilangkan Navigasi Bar
      * */
-    fun hideNavBar(decorView: View) {
+    private fun hideNavBar(decorView: View) {
         navbar.visibility=View.GONE
         //requireActivity().requestWindowFeature(Window.FEATURE_NO_TITLE)
         @SuppressWarnings("deprecation")
@@ -300,7 +302,7 @@ class RadioFragment(val dataRepository: DataRepository) : Fragment() {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun liveChatInit(){
-        livechat.loadUrl("https://minnit.chat/iontv?embed")
+        livechat.loadUrl(getString(R.string.link_chat_radio))
         livechat.settings.javaScriptEnabled=true
         livechat.settings.setSupportMultipleWindows(true)
         livechat.webViewClient= WebViewClient()

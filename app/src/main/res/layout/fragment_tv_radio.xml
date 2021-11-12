@@ -22,7 +22,7 @@
                 android:layout_height="@dimen/_40sdp"
                 android:scaleType="fitXY"
                 android:id="@+id/gambarKertas"
-                android:src="@drawable/hitam_kertas"/>
+                android:src="@color/pallet_gray"/>
 
             <ImageView
                 android:id="@+id/logoTV"
@@ -87,7 +87,7 @@
                 android:layout_alignBottom="@id/linearLayout"
                 android:layout_alignParentTop="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/hitam_kertas"
+                android:src="@color/pallet_gray"
                 app:layout_constraintBottom_toBottomOf="@id/linearLayout"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,7 +109,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/syncopate_bold"
-                        android:text="NAMA PROGRAM 1"
+                        android:text="META TV LIVE STREAMING"
                         android:textColor="@color/pallet_red"
                         android:textSize="@dimen/_18sdp" />
 
@@ -117,6 +117,7 @@
                         android:id="@+id/ratingProgramUmurTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:visibility="gone"
                         android:fontFamily="@font/montserrat"
                         android:text="Dokumenter | SU"
                         android:textColor="@color/pallet_white"

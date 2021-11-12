@@ -112,10 +112,12 @@
                 <TextView
                     android:id="@+id/tv_program_deskripsi"
                     android:layout_width="match_parent"
+                    android:justificationMode="inter_word"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/deskripsi_about_us"
                     android:textColor="@color/pallet_white"
-                    />
+                    tools:ignore="UnusedAttribute" />
             </LinearLayout>
 
             <!--<LinearLayout
@@ -196,6 +198,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/layoutPengisiAcara"
                 >
 
                 <TextView
@@ -207,10 +210,22 @@
                     android:textColor="@color/pallet_red"
                     />
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPengisiAcara"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/presenter_layout"
+                    tools:itemCount="5"
+                    />
+
+                <!--<LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_5sdp"
                     >
 
                     <androidx.cardview.widget.CardView
@@ -236,12 +251,12 @@
                         android:layout_margin="@dimen/_15sdp"
                         />
 
-                </LinearLayout>
-                <View
-                    android:layout_height="@dimen/_250sdp"
-                    android:layout_width="match_parent"/>
+                </LinearLayout>-->
 
             </LinearLayout>
+            <View
+                android:layout_height="@dimen/_250sdp"
+                android:layout_width="match_parent"/>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

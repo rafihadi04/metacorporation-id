@@ -9,10 +9,8 @@ import android.os.*
 import android.provider.Settings
 import android.util.Log
 import android.view.View
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
@@ -23,11 +21,11 @@ import id.metacorporation.utils.StartupReceiver
 
 class MainActivity : AppCompatActivity(),MainActivityUseCase {
 
-    lateinit var bottomNav :ChipNavigationBar
+    private lateinit var bottomNav :ChipNavigationBar
     /*lateinit var viewPager : ViewPager2*/
 
     //var currentPos :Int? = null
-    val dataRepository : DataRepository = DataRepository()
+    private lateinit var dataRepository : DataRepository
     //lateinit var notificationBuilder :NotificationCompat.Builder
 
     private var doubleBackToExitPressedOnce = false
@@ -36,6 +34,8 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        dataRepository = DataRepository()
 
         val powerManager = getSystemService(POWER_SERVICE) as PowerManager
         if (!powerManager.isIgnoringBatteryOptimizations(packageName)) {
@@ -102,13 +102,13 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
         touchSlopField.set(recyclerView, touchSlop*8)       // "8" was obtained experimentally
     }*/
 
-    fun bottomNavInit(){
+    private fun bottomNavInit(){
 
         val homeFragment = HomeFragment(dataRepository)
         val tvFragment = TvFragment(dataRepository)
         val newsFragment = NewsFragment()
         val radioFragment = RadioFragment(dataRepository)
-        val aboutFragment = AboutFragment()
+        val aboutFragment = AboutFragment(dataRepository)
 
         /*supportFragmentManager.beginTransaction().also {
             it.add(homeFragment,"homeFragment")
@@ -218,7 +218,7 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
     }
 
-    fun setNotifReceiver(){
+    private fun setNotifReceiver(){
         val BROADCAST = "id.metacorporation.action.notifikasi"
         val intentFilter = IntentFilter(BROADCAST)
 

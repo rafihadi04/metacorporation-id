@@ -1,12 +1,12 @@
 package id.metacorporation.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.smarteist.autoimageslider.SliderViewAdapter
@@ -24,9 +24,10 @@ class NewsAdapter(val context: Context, private val posts:ArrayList<Posts>): Sli
         return posts.size
     }
 
+    @SuppressLint("InflateParams")
     override fun onCreateViewHolder(parent: ViewGroup?): VH {
         return VH(
-            LayoutInflater.from(context).inflate(R.layout.banner_layout,null)
+            LayoutInflater.from(context).inflate(R.layout.banner_layout_new,null)
         )
     }
 

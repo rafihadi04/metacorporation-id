@@ -1,15 +1,11 @@
 package id.metacorporation.fragment
 
 import android.annotation.SuppressLint
-import android.app.Notification
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.content.res.Configuration.ORIENTATION_LANDSCAPE
 import android.content.res.Configuration.ORIENTATION_PORTRAIT
-import android.graphics.Color
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -17,14 +13,11 @@ import android.provider.Settings
 import android.util.Log
 import android.view.*
 import android.webkit.WebChromeClient
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -39,11 +32,10 @@ import id.metacorporation.adapter.ProgramAdapter
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
 import id.metacorporation.usecase.MainActivityUseCase
-import kotlin.properties.Delegates
 
 
 @Suppress("LocalVariableName")
-class TvFragment(val dataRepository: DataRepository) : Fragment() {
+class TvFragment(private val dataRepository: DataRepository) : Fragment() {
     private lateinit var rvProgramTv :RecyclerView
     //private lateinit var rvPresenterTv :RecyclerView
     private lateinit var viewFragment: View
@@ -56,9 +48,8 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
     private lateinit var lastState :PlayerConstants.PlayerState
     private lateinit var toolbar :RelativeLayout
     private var youtubePlayer :YouTubePlayer? = null
-    private var mOriginalHeight by Delegates.notNull<Int>()
+    private lateinit var namaProgramTvOnAir:TextView
     private var isFullscreen :Boolean = false
-    private var isShrink :Boolean = false
     private var callback: OnBackPressedCallback? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,6 +77,8 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
         navbar = requireActivity().findViewById(R.id.bottomNav)
         toolbar = viewFragment.findViewById(R.id.toolbar)
         scrollView = viewFragment.findViewById(R.id.scrollViewTvRadio)
+        namaProgramTvOnAir =viewFragment.findViewById(R.id.namaProgramTvOnAir)
+        namaProgramTvOnAir.text = getString(R.string.meta_tv_live_name)
 
         /*livechat.post{
             mOriginalHeight=livechat.height
@@ -96,7 +89,9 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
 
         youTubePlayerView.post{
             setLiveChatListener()
-            setyoutubeLink(getString(R.string.youtube_live_tv))
+            val linkTV = dataRepository.getLinkTV()
+            Log.d("HOME GET LINK TV", linkTV)
+            setyoutubeLink(linkTV)
         }
         liveChatInit()
 
@@ -126,7 +121,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
                 livechat.visibility=View.GONE
             }
         }
-        livechat.setOnTouchListener { v, event ->
+        livechat.setOnTouchListener { _, _ ->
             scrollView.requestDisallowInterceptTouchEvent(true)
             false
         }
@@ -196,7 +191,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
     /**
      * Fungsi untuk menampilkan Program TV
      * */
-    fun showProgram(dataProgram: ArrayList<ProgramModel>,/* dataPresenter: ArrayList<PresenterModel>*/) {
+    private fun showProgram(dataProgram: ArrayList<ProgramModel>/* dataPresenter: ArrayList<PresenterModel>*/) {
         rvProgramTv.adapter = ProgramAdapter(
             context,
             programList = dataProgram
@@ -223,7 +218,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
     /**
      * Fungsi untuk menyiapkan layout Youtube
      * */
-    fun setyoutubeLink(url :String){
+    private fun setyoutubeLink(url :String){
         lifecycle.addObserver(youTubePlayerView)
 
         setYoutubeListener(url)
@@ -355,7 +350,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
     /**
      * Fungsi untuk menghilangkan Navigasi Bar
      * */
-    fun hideNavBar(decorView: View) {
+    private fun hideNavBar(decorView: View) {
         navbar.visibility=View.GONE
         //requireActivity().requestWindowFeature(Window.FEATURE_NO_TITLE)
         @SuppressWarnings("deprecation")
@@ -402,7 +397,7 @@ class TvFragment(val dataRepository: DataRepository) : Fragment() {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun liveChatInit(){
-        livechat.loadUrl("https://minnit.chat/iontv?embed")
+        livechat.loadUrl(getString(R.string.link_chat_tv))
         livechat.settings.javaScriptEnabled=true
         livechat.webViewClient=WebViewClient()
         livechat.webChromeClient=WebChromeClient()

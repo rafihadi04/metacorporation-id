@@ -20,7 +20,6 @@ import id.metacorporation.R
 import id.metacorporation.adapter.JadwalAdapter
 import id.metacorporation.adapter.NewsAdapter
 import id.metacorporation.adapter.SpinnerAdapter
-import id.metacorporation.enum.TopProgramType
 import id.metacorporation.models.Posts
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
@@ -34,15 +33,15 @@ import kotlin.collections.ArrayList
 
 
 class HomeFragment(val dataRepository: DataRepository) : Fragment() {
-    lateinit var viewFragment :View
-    lateinit var rvTopProgramTv :RecyclerView
-    lateinit var rvTopProgramRadio :RecyclerView
-    lateinit var slider :SliderView
-    lateinit var newsSlider :SliderView
-    lateinit var btStreamTV :MaterialButton
-    lateinit var btStreamRadio :MaterialButton
-    lateinit var layoutJadwalTV :LinearLayout
-    lateinit var layoutJadwalRadio :LinearLayout
+    private lateinit var viewFragment :View
+    private lateinit var rvTopProgramTv :RecyclerView
+    private lateinit var rvTopProgramRadio :RecyclerView
+    private lateinit var slider :SliderView
+    private lateinit var newsSlider :SliderView
+    private lateinit var btStreamTV :MaterialButton
+    private lateinit var btStreamRadio :MaterialButton
+    private lateinit var layoutJadwalTV :LinearLayout
+    private lateinit var layoutJadwalRadio :LinearLayout
     private lateinit var spinner :Spinner
 
     override fun onCreateView(
@@ -130,14 +129,24 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
         @SuppressLint("SourceLockedOrientationActivity")
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         (requireActivity() as MainActivityUseCase).whiteNavBar()
+        (requireActivity() as MainActivityUseCase).blackNavBar()
     }
 
 
-    fun showBanner(context: Context?, data: ArrayList<ProgramModel>) {
+    private fun showBanner(context: Context?, data: ArrayList<ProgramModel>) {
+        val formatTanggal = SimpleDateFormat("EEEE, dd MMM yyyy", Locale("id","ID"))
+        var now = Date()
+        //now = GregorianCalendar(2021, 10, 15).time
+        var data2 = ArrayList(data.filter { programModel ->
+            programModel.jadwal.contains(formatTanggal.format(now).toString())
+        })
+        if (data2.isEmpty()){
+            data2 = data
+        }
         slider.setSliderAdapter(
             BannerAdapter(
                 context,
-                data
+                data2
             )
         )
         slider.setIndicatorAnimation(IndicatorAnimationType.COLOR)

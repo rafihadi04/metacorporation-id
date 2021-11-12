@@ -17,7 +17,10 @@
         \n\n\t\t\tNama Meta yang bermakna perubahan, semoga bisa memberikan perkembangan atau perbaikan pada zaman menuju tatanan baru nantinya dengan menyajikan program yang inspiratif,edukatif, serta inovatif pada hasil siaran yang diberikan kepada masyarakat.
     </string>
     <string name="contact_us">Contact Us</string>
-    <string name="contact_us_description"><b>Meta Corporation</b>\n<br/>Jalan Magelang KM.6 Sleman Yogyakarta\n<br/>official@metacorporation.id</string>
+    <string name="contact_us_description"><b>Meta Corporation\n<br/>
+        Sekolah Tinggi Multi Media “MMTC” Yogyakarta
+    </b>\n\n<br/><br/>Jl. Magelang No.KM.6, Kutu Patran, Sinduadi, Mlati,
+        Kabupaten Sleman, Daerah Istimewa Yogyakarta – 55284</string>
     <string name="toast_double_back">Tekan sekali lagi untuk mengeluarkan</string>
     <string name="youtube_live_tv">awWVru0nwMY</string>
     <string name="youtube_live_radio">2cP4sE5l-B8</string>
@@ -31,7 +34,7 @@
     <string name="whatsapp">WhatsApp</string>
     <string name="youtube">Youtube</string>
     <string name="facebook">Facebook</string>
-    <string name="pembawa_acara">PEMBAWA ACARA</string>
+    <string name="pembawa_acara">PENGISI ACARA</string>
     <string name="daftar_kru">DAFTAR KRU</string>
     <string name="meta_corporation">META CORPORATION</string>
     <string name="media_partner">MEDIA PARTNER</string>
@@ -40,10 +43,17 @@
     <string name="streaming_tv">STREAMING TV</string>
     <string name="streaming_radio">STREAMING RADIO</string>
     <string name="jadwal_nsiaran">JADWAL\nSIARAN</string>
-    <string name="program_tv">Program TV</string>
-    <string name="program_radio">Program Radio</string>
+    <string name="program_tv">PROGRAM TV</string>
+    <string name="program_radio">PROGRAM RADIO</string>
     <string name="live_chat">LIVE CHAT</string>
     <string name="link_news">https://news.metacorporation.id</string>
     <string name="program_tv_lainnya">PROGRAM TV LAINNYA</string>
     <string name="program_radio_lainnya">PROGRAM RADIO LAINNYA</string>
+    <string name="link_chat_tv">https://minnit.chat/METACORP?embed</string>
+    <string name="link_chat_radio">https://minnit.chat/METACORP?embed</string>
+    <string name="meta_tv_live_name">META TV LIVE STREAMING</string>
+    <string name="meta_radio_live_name">META RADIO LIVE STREAMING</string>
+    <string name="connect_with_us">Connect with Us</string>
+    <string name="kontak">Kontak</string>
+    <string name="terima_kasih">TERIMA KASIH</string>
 </resources>

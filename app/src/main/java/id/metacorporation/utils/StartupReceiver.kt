@@ -1,5 +1,6 @@
 package id.metacorporation.utils
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -7,7 +8,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
-import android.os.SystemClock
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
@@ -49,6 +49,7 @@ class StartupReceiver:BroadcastReceiver() {
         //NotificationManagerCompat.from(this).notify(NotificationID.PROGRAM.ordinal,notificationBuilder.build())
     }
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     private fun setUpAlarm(context: Context){
         val intent = Intent(context, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(context,0,intent,0)
@@ -56,12 +57,16 @@ class StartupReceiver:BroadcastReceiver() {
         val dataRepository = DataRepository()
         val allProg = dataRepository.getProgramTv()+dataRepository.getProgramRadio()
         allProg.forEach{
-            Log.d("ALARMSET", it.namaProgram)
-            scheduleNotification(context, "${it.namaProgram} akan segera dimulai", "Tekan untuk melihat Program",R.drawable.ic_white_fix,pendingIntent,formatTanggal.parse(it.jadwal).time)
+            val waktu = formatTanggal.parse(it.jadwal).time
+            if (waktu > Date().time){
+                Log.d("ALARMSET", it.namaProgram)
+                scheduleNotification(context, "${it.namaProgram} akan segera dimulai", "Tekan untuk melihat Program",R.drawable.ic_white_fix,pendingIntent,waktu)
+            }
         }
         //scheduleNotification(context, "akan segera dimulai", "Tekan untuk melihat Program",R.drawable.ic_white_fix,pendingIntent,formatTanggal.parse("Sabtu, 06 Nov 2021 Pukul 04.38 WIB").time)
     }
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     private fun scheduleNotification(
         context: Context,
         title: String,

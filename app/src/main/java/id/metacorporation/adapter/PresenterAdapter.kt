@@ -11,14 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import id.metacorporation.R
 import id.metacorporation.enum.SosmedType
 import id.metacorporation.models.JobdeskModel
 
 class PresenterAdapter(
     val context: Context?,
-    val presenterList :ArrayList<JobdeskModel>,
+    private val presenterList :ArrayList<JobdeskModel>,
     ):RecyclerView.Adapter<PresenterAdapter.PresenterAdapterVH>() {
     inner class PresenterAdapterVH(itemView: View) :RecyclerView.ViewHolder(itemView){
         internal var imageProfile :ImageView
@@ -41,7 +40,7 @@ class PresenterAdapter(
     override fun onBindViewHolder(holder: PresenterAdapterVH, position: Int) {
 
         holder.namaPresenter.text = presenterList[position].namaKru
-        holder.jobdesk.text = presenterList[position].namaJobdesk
+        holder.jobdesk.text = presenterList[position].namaJobdesk.uppercase()
 
         Glide.with(context!!)
             .load(presenterList[position].resourceImage)

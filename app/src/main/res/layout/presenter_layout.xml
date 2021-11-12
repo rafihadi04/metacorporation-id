@@ -12,7 +12,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="@dimen/program_image_sizeXY"
             android:layout_height="@dimen/program_image_sizeXY"
-            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
             >
             <ImageView
                 android:id="@+id/iv_program"
@@ -30,7 +30,7 @@
             android:layout_marginTop="12dp"
             android:textSize="@dimen/_10sdp"
             android:fontFamily="@font/montserrat"
-            android:textColor="@color/pallet_white"
+            android:textColor="@color/pallet_yellow"
             android:layout_gravity="bottom"/>
         <TextView
             android:id="@+id/tv_jobdesk"
@@ -38,9 +38,10 @@
             android:layout_height="wrap_content"
             android:text="Jobdesk"
             android:gravity="center"
+            android:layout_marginTop="-5dp"
             android:textSize="@dimen/_8sdp"
             android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/pallet_white"
+            android:textColor="@color/pallet_yellow"
             android:layout_gravity="bottom"/>
     </LinearLayout>
 </FrameLayout>

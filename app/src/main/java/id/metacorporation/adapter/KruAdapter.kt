@@ -1,5 +1,6 @@
 package id.metacorporation.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,11 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import id.metacorporation.R
 
-class KruAdapter(val listKru :ArrayList<String>): RecyclerView.Adapter<KruAdapter.KruAdapterVH>() {
+class KruAdapter(private val listKru :ArrayList<String>): RecyclerView.Adapter<KruAdapter.KruAdapterVH>() {
     class KruAdapterVH(itemView: View) :RecyclerView.ViewHolder(itemView){
         internal val namaOrang :TextView = itemView.findViewById(R.id.jobdesk_nama)
     }
 
+    @SuppressLint("InflateParams")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KruAdapterVH {
 
         return KruAdapterVH(

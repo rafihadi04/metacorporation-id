@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/kiri"
+            android:gravity="end"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/credit_title_jobName"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"
+                android:id="@+id/tvKiri"
+                android:visibility="gone"
+                android:textAlignment="textEnd"
+                android:textColor="@color/pallet_gray"
+                android:text="Direktur Utama"
+                android:layout_marginEnd="@dimen/_5sdp"
+                tools:visibility="visible"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:id="@+id/kanan">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/credit_title_jobName"
+                android:layout_weight="1"
+                android:id="@+id/tvKanan"
+                android:visibility="gone"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/pallet_gray"
+                android:text="Rafli Faturrahman"
+                tools:visibility="visible"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -11,12 +11,12 @@
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/pallet_white"
+        android:background="@color/pallet_gray"
         >
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_25sdp"
-            android:src="@drawable/meta_corporation_colored_black"
+            android:src="@drawable/meta_corporation_colored_white"
             />
         <!--<TextView
             android:layout_width="wrap_content"
@@ -102,7 +102,9 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/montserrat_bold"
                             android:text="@string/streaming_tv"
+                            android:padding="@dimen/_8sdp"
                             android:textColor="@color/pallet_gray"
+                            app:rippleColor="@color/pallet_red"
                             app:strokeColor="@color/pallet_gray"
                             app:strokeWidth="@dimen/_2sdp"
                             app:cornerRadius="0dp"
@@ -114,8 +116,10 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:text="@string/streaming_radio"
+                            android:padding="@dimen/_8sdp"
                             android:fontFamily="@font/montserrat_bold"
                             android:textColor="@color/pallet_gray"
+                            app:rippleColor="@color/pallet_red"
                             app:strokeColor="@color/pallet_gray"
                             app:strokeWidth="@dimen/_2sdp"
                             app:cornerRadius="0dp"/>
@@ -155,7 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/jadwal_nsiaran"
-                        android:textSize="@dimen/_15sdp"
+                        android:textSize="@dimen/_18sdp"
                         android:textAlignment="center"
                         android:lineSpacingExtra="@dimen/_2sdp"
                         android:fontFamily="@font/syncopate_bold"
@@ -204,11 +208,12 @@
                             android:text="@string/program_tv"
                             android:textSize="@dimen/_15sdp"
                             android:textColor="#F9CF00"
-                            android:textStyle="italic" />
+                            />
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_jadwal_programtv"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             tools:listitem="@layout/jam_program_layout"
                             tools:itemCount="5"
@@ -231,7 +236,7 @@
                             android:fontFamily="@font/montserrat_bold"
                             android:letterSpacing="0.2"
                             android:textColor="#F9CF00"
-                            android:textStyle="italic"/>
+                            />
                         <androidx.recyclerview.widget.RecyclerView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -276,7 +281,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                app:cardCornerRadius="@dimen/_20sdp"
+                                app:cardCornerRadius="@dimen/_15sdp"
                                 android:layout_marginTop="@dimen/_10sdp">
 
                                 <com.smarteist.autoimageslider.SliderView
@@ -292,7 +297,7 @@
                                     app:sliderIndicatorOrientation="horizontal"
                                     app:sliderIndicatorPadding="3dp"
                                     app:sliderIndicatorRadius="2dp"
-                                    app:sliderIndicatorSelectedColor="#5A5A5A"
+                                    app:sliderIndicatorSelectedColor="@color/pallet_red"
                                     app:sliderIndicatorUnselectedColor="#FFF"
                                     app:sliderScrollTimeInSec="1"
                                     app:sliderStartAutoCycle="true"

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/pallet_white"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/layoutCredit"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_15sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_18sdp"
+                android:fontFamily="@font/syncopate_bold"
+                android:textColor="@color/pallet_gray"
+                android:text="@string/terima_kasih"
+                />
+        </LinearLayout>
+
+        <!--TODO:CONTOH LAYOUTNYA-->
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/credit_title_title"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/pallet_gray"
+                        android:text="@string/meta_corporation"
+                        android:layout_marginBottom="@dimen/_5sdp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/credit_title_jobName"
+                            android:fontFamily="@font/montserrat"
+                            android:textStyle="bold"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/pallet_gray"
+                            android:text="Direktur Utama"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/credit_title_jobName"
+                            android:fontFamily="@font/montserrat"
+                            android:textStyle="bold"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/pallet_gray"
+                            android:text="Sekertaris"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/credit_title_jobName"
+                            android:fontFamily="@font/montserrat"
+                            android:textStyle="bold"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/pallet_gray"
+                            android:text="Finance I"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/credit_title_jobName"
+                            android:fontFamily="@font/montserrat"
+                            android:textStyle="bold"
+
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/pallet_gray"
+                            android:text="Finance II"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/credit_title_jobName"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/pallet_gray"
+                            android:text="Rafli Faturrahman"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/credit_title_jobName"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/pallet_gray"
+                            android:text="Millania Daffa R"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/credit_title_jobName"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/pallet_gray"
+                            android:text="Annisa Cindi S"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/credit_title_jobName"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/montserrat"
+                            android:textColor="@color/pallet_gray"
+                            android:text="Shahnaz Dinda R"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/rvCredit"
+            android:nestedScrollingEnabled="true"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:orientation="vertical"
+            tools:listitem="@layout/credit_title_layout"
+            tools:itemCount="3"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

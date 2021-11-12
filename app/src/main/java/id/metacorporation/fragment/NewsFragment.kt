@@ -114,7 +114,7 @@ class NewsFragment : Fragment() {
                         request: WebResourceRequest,
                         error: WebResourceError
                     ) {
-                        Log.d(this@with.javaClass.simpleName, "Error: ${error.errorCode}, ${error.description.toString()}")
+                        Log.d(this@with.javaClass.simpleName, "Error: ${error.errorCode}, ${error.description}")
 
                         //view.stopLoading()
                         wvLoading.visibility=View.GONE
@@ -133,7 +133,7 @@ class NewsFragment : Fragment() {
                         }else{
                             evaluateJavascript(displayErrorContentCode){
                                 Log.d(this.javaClass.simpleName,it)
-                                evaluateJavascript("document.querySelector(\".error-code\").innerText=`${error.description.toString()}\nRequested url: ${request.url}`",null)
+                                evaluateJavascript("document.querySelector(\".error-code\").innerText=`${error.description}\nRequested url: ${request.url}`",null)
                             }/*
                         view.post {
                             view.evaluateJavascript("document.querySelector(\".error-code\").innerText=`${error.description.toString()}\nRequested url: ${request.url}`",null)
