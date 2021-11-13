@@ -4,11 +4,14 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.*
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -17,9 +20,20 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import id.metacorporation.fragment.*
 import id.metacorporation.repository.DataRepository
 import id.metacorporation.usecase.MainActivityUseCase
+import id.metacorporation.utils.OnKeyboardVisibilityListener
 import id.metacorporation.utils.StartupReceiver
+import android.util.TypedValue
+import android.graphics.Rect
 
-class MainActivity : AppCompatActivity(),MainActivityUseCase {
+import android.os.Build
+
+
+
+
+
+
+
+class MainActivity : AppCompatActivity(),MainActivityUseCase,OnKeyboardVisibilityListener {
 
     private lateinit var bottomNav :ChipNavigationBar
     /*lateinit var viewPager : ViewPager2*/
@@ -227,6 +241,48 @@ class MainActivity : AppCompatActivity(),MainActivityUseCase {
 
         val newIntent = Intent(BROADCAST)
         sendBroadcast(newIntent)
+    }
+
+    private fun setKeyboardVisibilityListener(onKeyboardVisibilityListener: OnKeyboardVisibilityListener){
+        val parentView:View = findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
+        parentView.viewTreeObserver.addOnGlobalLayoutListener(
+            object : ViewTreeObserver.OnGlobalLayoutListener{
+                private var alreadyOpen = false
+                private val defaultKeyboardHeightDP = 100
+                private val EstimatedKeyboardDP =
+                    defaultKeyboardHeightDP + if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) 48 else 0
+                private val rect = Rect()
+
+                override fun onGlobalLayout() {
+                    val estimatedKeyboardHeight = TypedValue.applyDimension(
+                        TypedValue.COMPLEX_UNIT_DIP,
+                        EstimatedKeyboardDP.toFloat(),
+                        parentView.resources.displayMetrics
+                    )
+                        .toInt()
+                    parentView.getWindowVisibleDisplayFrame(rect)
+                    val heightDiff: Int = parentView.rootView.height - (rect.bottom - rect.top)
+                    val isShown = heightDiff >= estimatedKeyboardHeight
+
+                    if (isShown == alreadyOpen) {
+                        Log.i("Keyboard state", "Ignoring global layout change...")
+                        return
+                    }
+                    alreadyOpen = isShown
+                    onKeyboardVisibilityListener.onVisibilityChanged(isShown)
+                }
+
+            }
+        )
+    }
+
+    private fun showNavBar(visible: Boolean) {
+        bottomNav.visibility = if(visible) View.VISIBLE else View.GONE
+        //bottomNav.
+    }
+
+    override fun onVisibilityChanged(visible: Boolean) {
+        showNavBar(!visible)
     }
 
 

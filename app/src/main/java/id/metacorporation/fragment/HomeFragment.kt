@@ -92,6 +92,7 @@ class HomeFragment(val dataRepository: DataRepository) : Fragment() {
                 override fun onFailure(call: Call<ArrayList<Posts>>, t: Throwable) {
                     Log.e(this.javaClass.simpleName,t.toString())
                     (activity as MainActivityUseCase).onError("Periksa kembali koneksi kamu!")
+                    dataRepository.onErrorNetwork = true
                 }
 
             }

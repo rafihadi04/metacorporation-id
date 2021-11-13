@@ -9,6 +9,7 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.util.Log
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,10 +18,15 @@ import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.cardview.widget.CardView
+import androidx.core.view.setMargins
 import androidx.core.widget.NestedScrollView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
@@ -29,6 +35,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.You
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import id.metacorporation.R
 import id.metacorporation.adapter.ProgramAdapter
+import id.metacorporation.adapter.VODAdappter
 import id.metacorporation.models.ProgramModel
 import id.metacorporation.repository.DataRepository
 import id.metacorporation.usecase.MainActivityUseCase
@@ -42,6 +49,7 @@ class RadioFragment(private val dataRepository: DataRepository) : Fragment() {
     private lateinit var livechat: WebView
     private lateinit var scrollView : NestedScrollView
     private lateinit var livechatTitle : TextView
+    private lateinit var liveChatTitleLayout :LinearLayout
     private lateinit var namaProgramTvOnAir:TextView
     private lateinit var logo :ImageView
     private lateinit var toolbar: RelativeLayout
@@ -65,6 +73,7 @@ class RadioFragment(private val dataRepository: DataRepository) : Fragment() {
 
         livechat = viewFragment.findViewById(R.id.livechatWebview)
         livechatTitle = viewFragment.findViewById(R.id.liveChatButton)
+        liveChatTitleLayout = viewFragment.findViewById(R.id.liveChatTitleLayout)
         scrollView = viewFragment.findViewById(R.id.scrollViewTvRadio)
         namaProgramTvOnAir =viewFragment.findViewById(R.id.namaProgramTvOnAir)
         namaProgramTvOnAir.text = getString(R.string.meta_radio_live_name)
@@ -84,12 +93,52 @@ class RadioFragment(private val dataRepository: DataRepository) : Fragment() {
                 .into(logo)*/
             logo.setImageResource(R.drawable.meta_radio_colored_white)
             setLiveChatListener()
-            setyoutubeLink(dataRepository.getLinkRadio())
+            val link = dataRepository.getLinkRadio()
+            if (!link.isNullOrEmpty()){
+                setyoutubeLink(link)
+                liveChatInit()
+                showProgram(dataRepository.getProgramRadio()/*, dataRepository.getAnnouncer()*/)
+            }else {
+                replayLayout(dataRepository.getProgramRadio())
+            }
         }
-        showProgram(dataRepository.getProgramRadio()/*, dataRepository.getAnnouncer()*/)
-        liveChatInit()
 
+        networkError(dataRepository.onErrorNetwork)
         return viewFragment
+    }
+
+    private fun networkError(posisi :Boolean){
+        if(posisi){
+            val dialog = layoutInflater.inflate(R.layout.on_network_error,null)
+            dialog.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT).also {
+                it.setMargins(requireActivity().resources.getDimension(R.dimen._10sdp).toInt())
+            }
+            (scrollView.getChildAt(0) as RelativeLayout).addView(
+                dialog,
+                RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT).also {
+                    it.alignWithParent=true
+                    it.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+                    it.bottomMargin=requireActivity().resources.getDimension(R.dimen._50sdp).toInt()
+                    it.marginStart=requireActivity().resources.getDimension(R.dimen._10sdp).toInt()
+                    it.marginEnd=requireActivity().resources.getDimension(R.dimen._10sdp).toInt()
+                }
+            )
+        }
+    }
+
+    private fun replayLayout(programRadio: ArrayList<ProgramModel>) {
+        youTubePlayerView.visibility = View.GONE
+        liveChatTitleLayout.visibility = View.GONE
+        textTVRadio.visibility = View.GONE
+        namaProgramTvOnAir.visibility = View.GONE
+        /*.text = "Replay Program Radio".uppercase()
+        namaProgramTvOnAir.setTextColor(requireContext().getColor(R.color.pallet_yellow))*/
+        //rvProgramRadio.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        rvProgramRadio.layoutManager = GridLayoutManager(context,2,LinearLayoutManager.VERTICAL,false)
+        rvProgramRadio.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT).also {
+            it.gravity = Gravity.CENTER
+        }
+        rvProgramRadio.adapter = VODAdappter(requireContext(),programRadio)
     }
 
     @SuppressLint("ClickableViewAccessibility")

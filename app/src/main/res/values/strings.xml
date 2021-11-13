@@ -56,4 +56,5 @@
     <string name="connect_with_us">Connect with Us</string>
     <string name="kontak">Kontak</string>
     <string name="terima_kasih">TERIMA KASIH</string>
+    <string name="koneksi_buruk_dialog">Terdapat indikasi jaringan terputus. Silahkan periksa kembali koneksi Anda! Lalu buka ulang aplikasi!</string>
 </resources>

@@ -18,17 +18,19 @@ import kotlin.collections.ArrayList
 
 class DataRepository{
 
+    private val API_KEY = "3394cb84-ff89-4a23-b55f-e40ef70a1e3c"
     private val newsAPI: NewsAPI = NewsAPIBuilder.getNewsAPI().create(NewsAPI::class.java)
     private val programAPI: ProgramAPI = ProgramAPIBuilder.getProgramAPI().create(ProgramAPI::class.java)
     private var programURL :ArrayList<ProgramLink>? = null
     var credits :ArrayList<CreditModel>? = null
     private val dataTV = arrayListOf<ProgramModel>()
     private val dataRadio = arrayListOf<ProgramModel>()
+    var onErrorNetwork :Boolean = false
     init {
 
         pullCredits()
 
-        programAPI.getProgramUrl().enqueue(object:Callback<ArrayList<ProgramLink>>{
+        programAPI.getProgramUrl(API_KEY).enqueue(object:Callback<ArrayList<ProgramLink>>{
 
             override fun onResponse(
                 call: Call<ArrayList<ProgramLink>>,
@@ -45,7 +47,7 @@ class DataRepository{
     }
 
     fun pullCredits() {
-        programAPI.getCreditTitle().enqueue(object : Callback<ArrayList<CreditModel>> {
+        programAPI.getCreditTitle(API_KEY).enqueue(object : Callback<ArrayList<CreditModel>> {
             override fun onResponse(
                 call: Call<ArrayList<CreditModel>>,
                 response: Response<ArrayList<CreditModel>>
@@ -664,17 +666,17 @@ class DataRepository{
                                 resourceImage = R.drawable.ic_launcher_background
                             ),
                             JobdeskModel(
-                                "Presenter Utama",
+                                "Presenter",
                                 namaKru = "Anggria Ratri Nugrah Vantiwintan",
                                 resourceImage = R.drawable.ic_launcher_background
                             ),
                             JobdeskModel(
-                                "Presenter Utama",
+                                "Presenter",
                                 namaKru = "Ilham Dika Pradana",
                                 resourceImage = R.drawable.ic_launcher_background
                             ),
                             JobdeskModel(
-                                "Presenter Rubrik",
+                                "Presenter",
                                 namaKru = "Yohanifa Ersha Aulia",
                                 resourceImage = R.drawable.ic_launcher_background
                             ),
@@ -1426,17 +1428,17 @@ class DataRepository{
                         detilPembawaAcara="Coldilac adalah bla bla bla?????",
                         pengisiAcara = arrayListOf(
                             JobdeskModel(
-                                "Penyiar Utama",
+                                "Announcer",
                                 namaKru = "Adinda Mega Chantika",
                                 resourceImage = R.drawable.primenews_penyiarutama_adinda_150px
                             ),
                             JobdeskModel(
-                                "Penyiar Prime Sport",
+                                "Announcer",
                                 namaKru = "Abiyoga Cahyo Bawono",
                                 resourceImage = R.drawable.primenews_penyiarsport_abiyoga_150px
                             ),
                             JobdeskModel(
-                                "Penyiar Prime Update",
+                                "Announcer",
                                 namaKru = "Adilla Ulfa M. R.",
                                 resourceImage = R.drawable.primenews_penyiarupdate_adilla_150px
                             ),
@@ -1942,12 +1944,12 @@ class DataRepository{
 
     }
 
-    fun getLinkTV(): String {
+    fun getLinkTV(): String? {
 
         val url = programURL?.firstOrNull{ it.program=="live tv" }?.linkYT
         Log.d("GET LINK RADIO", url ?:"null")
         return if (!url.isNullOrBlank()) url.split("https://www.youtube.com/watch?v=").last()
-        else linkTVSchedule()
+        else null //linkTVSchedule()
     }
 
     private fun linkTVSchedule() :String {
@@ -1963,12 +1965,12 @@ class DataRepository{
         }
     }
 
-    fun getLinkRadio(): String {
+    fun getLinkRadio(): String? {
 
         val url = programURL?.firstOrNull{ it.program=="live radio" }?.linkYT
         Log.d("GET LINK RADIO", url ?:"null")
         return if (!url.isNullOrBlank()) url.split("https://www.youtube.com/watch?v=").last()
-        else linkRadioSchedule()
+        else null //linkRadioSchedule()
     }
 
     private fun linkRadioSchedule() :String {

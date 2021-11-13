@@ -151,7 +151,7 @@ class AboutFragment(private val dataRepository: DataRepository) : Fragment() {
     }
 
     @SuppressLint("InflateParams")
-    private fun jobdeskInit(kru: List<Kru>):LinearLayout {
+    private fun jobdeskInit(kru: List<Kru>?):LinearLayout {
 
         val layoutHorizontal = LayoutInflater.from(context).inflate(R.layout.credit_title_jobdesk,null) as LinearLayout
         //layoutHorizontal.layoutParams = LinearLayout.LayoutParams(LinearLayout)
@@ -164,7 +164,7 @@ class AboutFragment(private val dataRepository: DataRepository) : Fragment() {
         val tvKiri = layoutHorizontal.findViewById<TextView>(R.id.tvKiri)
         val tvKanan = layoutHorizontal.findViewById<TextView>(R.id.tvKanan)
 
-        kru.forEach {
+        kru?.forEach {
 
             val tvJobNama = TextView(context)
             val tvNama = TextView(context)

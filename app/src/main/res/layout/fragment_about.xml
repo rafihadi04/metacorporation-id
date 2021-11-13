@@ -546,6 +546,7 @@
                         android:text="@string/credit_title"
                         android:textColor="@color/pallet_gray"
                         app:cornerRadius="0dp"
+                        android:padding="@dimen/_8sdp"
                         app:strokeColor="@color/pallet_gray"
                         app:strokeWidth="@dimen/_2sdp" />
 

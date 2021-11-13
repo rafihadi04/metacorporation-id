@@ -117,11 +117,11 @@
                         android:id="@+id/ratingProgramUmurTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"
                         android:fontFamily="@font/montserrat"
                         android:text="Dokumenter | SU"
                         android:textColor="@color/pallet_white"
-                        android:textSize="@dimen/_12sdp" />
+                        android:textSize="@dimen/_12sdp"
+                        android:visibility="gone" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -131,6 +131,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/liveChatTitleLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
@@ -179,6 +180,7 @@
                         android:id="@+id/rv_our_programtv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         tools:listitem="@layout/program_layout" />
@@ -193,6 +195,7 @@
                     android:visibility="gone" />
 
                 <View
+                    android:id="@+id/dummyBottom"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp" />
 
